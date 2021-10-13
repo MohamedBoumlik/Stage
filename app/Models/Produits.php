@@ -9,9 +9,10 @@ class Produits extends Model
 {
     use HasFactory;
 
+    protected $with = ['categorie'];
     public function categorie() {
 
-        return $this-> belongsTo("App\Models\Categories")->first();
+        return $this-> belongsTo(Categories::class, 'categorie_id', 'id');
         
     }
         
