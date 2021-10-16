@@ -33,6 +33,7 @@ Route::delete('/categorie/delete/{id}',"App\Http\Controllers\CategoriesControlle
 
 Route::get('/produit',"App\Http\Controllers\ProduitsController@index");
 Route::Post('/produit/store',"App\Http\Controllers\ProduitsController@store");
+Route::get('/produit/show/{id}',"App\Http\Controllers\ProduitsController@show");
 Route::put('/produit/update/{id}',"App\Http\Controllers\ProduitsController@update");
 Route::delete('/produit/delete/{id}',"App\Http\Controllers\ProduitsController@destroy");
 
