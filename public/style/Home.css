@@ -1,0 +1,82 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body nav ul {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 35%;
+}
+
+body nav ul li .navigation {
+  color: #DD866E !important;
+  font-size: larger;
+  margin-left: 25px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+body nav ul li :hover {
+  background-color: #DD866E;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: 600;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+}
+
+body nav ul li .active {
+  border-bottom: #DD866E 3px solid !important;
+}
+
+body nav .nav-link {
+  color: #2C3440;
+  font-size: 20px;
+}
+
+body .footer {
+  background-color: #e6a29199;
+}
+
+body .footer h1 {
+  color: #DD866E;
+  text-decoration: underline;
+}
+
+body .footer h2 {
+  color: #fff;
+}
+
+body .footer h2:hover {
+  color: #DD866E;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+  cursor: pointer;
+}
+
+body .footer .content {
+  color: #fff;
+  font-size: 18px;
+}
+
+body .footer .content a {
+  text-decoration: underline;
+  color: #fff;
+  font-size: 18px;
+}
+
+body .footer .content a:hover {
+  color: #DD866E;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Home.css.map */
