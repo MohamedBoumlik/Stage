@@ -63,3 +63,11 @@ Route::put('/services/update/{id}',"App\Http\Controllers\ServicesController@upda
 Route::delete('/services/delete/{id}',"App\Http\Controllers\ServicesController@destroy");
 Route::get('/services/show/{id}',"App\Http\Controllers\ServicesController@show");
 
+// ---------------------------Admin:---------------------------
+
+Route::get('/admin/produit',"App\Http\Controllers\Controller@index");
+Route::get('/admin/produit/create',"App\Http\Controllers\Controller@create");
+Route::Post('/admin/produit/store',"App\Http\Controllers\Controller@store");
+// Route::get('/admin/produit/show/{id}',"App\Http\Controllers\Controller@show");
+// Route::put('/admin/produit/update/{id}',"App\Http\Controllers\Controller@update");
+// Route::delete('/admin/produit/delete/{id}',"App\Http\Controllers\Controller@destroy");

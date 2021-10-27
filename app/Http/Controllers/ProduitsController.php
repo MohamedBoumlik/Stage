@@ -35,22 +35,22 @@ class ProduitsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $request -> validate([
-            'name' => 'required',
-            'description' => 'required',
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $request -> validate([
+    //         'name' => 'required',
+    //         'description' => 'required',
+    //     ]);
 
-        $prod = new Produits;
-        $prod->name = $request->name;
-        $prod->pic = $request->pic;
-        $prod->description = $request->description;
-        $prod->categorie_id = $request->type;
-        $prod->save();
-        return response()->json($prod);
+    //     $prod = new Produits;
+    //     $prod->name = $request->name;
+    //     $prod->pic = $request->pic;
+    //     $prod->description = $request->description;
+    //     $prod->categorie_id = $request->type;
+    //     $prod->save();
+    //     return response()->json($prod);
 
-    }
+    // }
 
     /**
      * Display the specified resource.
@@ -58,12 +58,12 @@ class ProduitsController extends Controller
      * @param  \App\Models\Produits  $produits
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $prod = Produits::findOrFail($id);
-        // return response()->json($prod);
+    // public function show($id)
+    // {
+    //     $prod = Produits::findOrFail($id);
+    //     // return response()->json($prod);
 
-    }
+    // }
 
     /**
      * Show the form for editing the specified resource.

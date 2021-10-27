@@ -18,6 +18,7 @@
     <li class="nav-item">
         <a class="nav-link  navigation" aria-current="page" href="{{url('/contact')}}">Contact</a>
     </li>
+    <a href="{{url('/admin/produit')}}">admin</a>
 @endsection
 
 {{-- content --}}
