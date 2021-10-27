@@ -16,7 +16,7 @@ class ProduitsController extends Controller
     public function index()
     {
         $prod = Produits::all();
-        return response()->json($prod);
+        return view('produits',compact('prod'));
     }
 
     /**
@@ -61,7 +61,7 @@ class ProduitsController extends Controller
     public function show($id)
     {
         $prod = Produits::findOrFail($id);
-        return response()->json($prod);
+        // return response()->json($prod);
 
     }
 
@@ -91,7 +91,7 @@ class ProduitsController extends Controller
         $prod->description = $request->description;
         $prod->categorie_id = $request->type;
         $prod->save();
-        return response()->json($prod);
+        // return response()->json($prod);
     }
 
     /**
@@ -104,6 +104,6 @@ class ProduitsController extends Controller
     {
         $prod = Produits::findOrFail($id);
         Produits::destroy($id);
-        return response()->json('done');
+        // return response()->json('done');
     }
 }

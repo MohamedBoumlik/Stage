@@ -17,7 +17,7 @@ class CommandesController extends Controller
     public function index()
     {
         $cmd = Commandes::all();
-        return response()->json($cmd);
+        // return response()->json($cmd);
     }
 
     /**
@@ -44,7 +44,7 @@ class CommandesController extends Controller
         $cmd->client_tel = $request->client_tel;
         $cmd->quantite = $request->quantite;
         $cmd->save();
-        return response()->json($cmd);
+        // return response()->json($cmd);
     }
 
     /**
@@ -57,6 +57,6 @@ class CommandesController extends Controller
     {
         $cmd = Commandes::findOrFail($id);
         Commandes::destroy($id);
-        return response()->json('done');
+        // return response()->json('done');
     }
 }

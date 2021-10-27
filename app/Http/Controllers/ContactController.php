@@ -55,7 +55,7 @@ class ContactController extends Controller
     public function show($id)
     {
         $msg = Contact::findOrFail($id);
-        return response()->json($msg);
+        // return response()->json($msg);
     }
 
     /**
@@ -68,6 +68,6 @@ class ContactController extends Controller
     {
         $msg = Contact::findOrFail($id);
         Contact::destroy($id);
-        return response()->json('done');
+        // return response()->json('done');
     }
 }

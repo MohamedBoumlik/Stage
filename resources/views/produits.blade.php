@@ -4,11 +4,11 @@
 
 @section('active')
     <li class="nav-item">
-        <a class="nav-link  navigation active" aria-current="page" href="{{route('home')}}">Accueil</a>
+        <a class="nav-link  navigation " aria-current="page" href="{{route('home')}}">Accueil</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link  navigation" aria-current="page" href="{{url('/produit')}}">Produits</a>
+        <a class="nav-link  navigation active" aria-current="page" href="{{url('/produit')}}">Produits</a>
     </li>
 
     <li class="nav-item">
@@ -23,108 +23,66 @@
 {{-- content --}}
 
 @section('content')
-<div>
+    <div class="row m-auto">
 
-    {{-- -------------------------------------------------- Slider -------------------------------------------------- --}}
+        <div class="col-lg-3 col-md-12 col-ms-12 mt-3 side">
+            <a href=""><p>Vetement De Travail</p></a>
+            <a href=""><p>Signalisation</p></a>
+            <a href=""><p>Détection Incendie</p></a>
+            <a href=""><p>Matériel Contre Incendie</p></a>
+        </div>
 
-    <div class="background">
+        <div class="col-lg-9 col-md-12 col-ms-12 mt-3">
 
-        <img class="mySlides" src="https://images.unsplash.com/photo-1591557562184-96fd1b4cf797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" alt="fire extinguisher">
-        <img class="mySlides" src="https://images.unsplash.com/photo-1575867094741-beeb9b072b83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="fire extinguisher">
-        <img class="mySlides" src="https://images.unsplash.com/photo-1529220502050-f15e570c634e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1229&q=80" alt="fire extinguisher">
+            <div class="row ">
 
-    </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 m-auto ">
 
-    {{-- -------------------------------------------------- About Us -------------------------------------------------- --}}
+                    <div class="card m-auto " style="width: fit-container;">
+                    
+                        <img style="height: 13rem" src="https://images.unsplash.com/photo-1591557562184-96fd1b4cf797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="..." style="height: 20rem">
+                        <h4 class="card-title text-center mt-3">Card title</h4>
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore reiciendis officiis ducimus tempore et earum animi expedita rerum in. Dolor reprehenderit culpa cumque, esse quibusdam voluptas dolorem fuga possimus rerum.</p>
+                        </div>
+                        <a href="#" class="btn btn-outline-dark m-2">Détail</a>
+                    </div>
 
-    <div class="row description m-auto">
+                </div>
 
-        <div class="col-md-12 col-lg-7 m-auto">
-            <div class='p-4'>
-                <h1 class='titles'>À propos de nous</h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eos laudantium illo, distinctio temporibus nisi doloribus? Illo atque, temporibus repellat consequatur incidunt similique sequi facilis quia, esse, cupiditate distinctio consequuntur laboriosam quaerat nam exercitationem fugit quasi laborum numquam quod ab odit facere beatae architecto. Eos veritatis pariatur velit doloribus praesentium ratione, itaque nam?
+                <div class="col-lg-4 col-md-6 col-sm-12 m-auto ">
+
+                    <div class="card m-auto " style="width: fit-container; ">
+                    
+                        <img style="height: 13rem" src="https://images.unsplash.com/photo-1591557562184-96fd1b4cf797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="..." style="height: 20rem">
+                        <h4 class="card-title text-center mt-3">Card title</h4>
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore reiciendis officiis ducimus tempore et earum animi expedita rerum in. Dolor reprehenderit culpa cumque, esse quibusdam voluptas dolorem fuga possimus rerum.</p>
+                        </div>
+                        <a href="#" class="btn btn-outline-dark m-2">Détail</a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 m-auto ">
+
+                    <div class="card m-auto " style="width: fit-container; ">
+                    
+                        <img style="height: 13rem" src="https://images.unsplash.com/photo-1591557562184-96fd1b4cf797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="..." style="height: 20rem">
+                        <h4 class="card-title text-center mt-3">Card title</h4>
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore reiciendis officiis ducimus tempore et earum animi expedita rerum in. Dolor reprehenderit culpa cumque, esse quibusdam voluptas dolorem fuga possimus rerum.</p>
+                        </div>
+                        <a href="#" class="btn btn-outline-dark m-2">Détail</a>
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
-        <div class="col-lg-5 col-md-12 m-auto">
-            <div class='p-4 m-auto'>
-                <img style="object-fit: cover; width: 100%; height: 100%;" src="https://images.pexels.com/photos/189474/pexels-photo-189474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="fire extinguisher" />
-           </div>
-        </div>
-
     </div>
 
-    {{-- -------------------------------------------------- Cards -------------------------------------------------- --}}
-    <div class="container">
-
-        <div class="row m-auto ">            
-
-            <div class="col-lg-4 sm-12">
-
-                <div class="card m-auto" style="width: 18rem;">
-                    
-                    <img style="height: 13rem" src="https://images.unsplash.com/photo-1591557562184-96fd1b4cf797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="..." style="height: 20rem">
-                    <h4 class="card-title text-center mt-3">Card title</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore reiciendis officiis ducimus tempore et earum animi expedita rerum in. Dolor reprehenderit culpa cumque, esse quibusdam voluptas dolorem fuga possimus rerum.</p>
-                    </div>
-                    <a href="#" class="btn btn-outline-dark m-2">Détail</a>
-                </div>
-
-                {{-- <div class="row display-flex flex-deriction-column justify-content-center">
-                    <div class="colb d-flex m-3">
-                        <br>
-                    </div>
-                </div> --}}
-                
-            </div>              
-
-            <div class="col-lg-4 sm-12">
-
-                <div class="card m-auto" style="width: 18rem;">
-                    
-                    <img style="height: 13rem" src="https://images.unsplash.com/photo-1591557562184-96fd1b4cf797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="..." style="height: 20rem">
-                    <h4 class="card-title text-center mt-3">Card title</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore reiciendis officiis ducimus tempore et earum animi expedita rerum in. Dolor reprehenderit culpa cumque, esse quibusdam voluptas dolorem fuga possimus rerum.</p>
-                    </div>
-                    <a href="#" class="btn btn-outline-dark m-2">Détail</a>
-                </div>
-
-                <div class="row display-flex flex-deriction-column justify-content-center">
-                    <div class="colb d-flex m-3">
-                        <br>
-                    </div>
-                </div>
-                
-            </div>  
-                            
-
-            <div class="col-lg-4 sm-12">
-
-                <div class="card m-auto" style="width: 18rem;">
-                    
-                    <img style="height: 13rem" src="https://images.unsplash.com/photo-1591557562184-96fd1b4cf797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="..." style="height: 20rem">
-                    <h4 class="card-title text-center mt-3">Card title</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore reiciendis officiis ducimus tempore et earum animi expedita rerum in. Dolor reprehenderit culpa cumque, esse quibusdam voluptas dolorem fuga possimus rerum.</p>
-                    </div>
-                    <a href="#" class="btn btn-outline-dark m-2">Détail</a>
-                </div>
-
-                <div class="row display-flex flex-deriction-column justify-content-center">
-                    <div class="colb d-flex m-3">
-                        <br>
-                    </div>
-                </div>
-                
-            </div>  
-                 
-        </div>
-
-    </div>
-
-</div>
 @endsection
 
 
@@ -132,7 +90,7 @@
 
 @section('footer')
 
-    <div class="footer">
+    <div class="footer mt-4">
         <p class="text-center mb-5" style="font-size: 40px; font-weight: bold; text-decoration: underline; color: #f3ab71;">Sté Ben-Bazid</p>
 
         <div class="container">
@@ -199,11 +157,5 @@
 {{-- style --}}
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('style/Home.css') }}">
-@endsection
-
-{{-- js --}}
-
-@section('script')
-    <script src="{{ asset('script/script.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('style/Produit.css') }}">
 @endsection

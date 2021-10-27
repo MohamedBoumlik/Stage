@@ -15,7 +15,7 @@ class CategoriesController extends Controller
     public function index()
     {
         $cat = Categories::all();
-        return response()->json($cat);
+        // return response()->json($cat);
 
     }
 
@@ -30,7 +30,7 @@ class CategoriesController extends Controller
         $cat = new Categories;
         $cat->type=$request->type;
         $cat->save();
-        return response()->json($cat);
+        // return response()->json($cat);
     }
 
     /**
@@ -45,7 +45,7 @@ class CategoriesController extends Controller
         $cat = Categories::findOrFail($id);
         $cat->type=$request->type;
         $cat->save();
-        return response()->json($cat);
+        // return response()->json($cat);
     }
 
     /**
@@ -58,6 +58,6 @@ class CategoriesController extends Controller
     {
         $cat = Categories::findOrFail($id);
         Categories::destroy($id);
-        return response()->json('done');
+        // return response()->json('done');
     }
 }

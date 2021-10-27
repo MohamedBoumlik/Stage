@@ -15,7 +15,7 @@ class ServicesController extends Controller
     public function index()
     {
         $serv = Services::all();
-        return response()->json($serv);
+        // return response()->json($serv);
     }
 
     /**
@@ -40,7 +40,7 @@ class ServicesController extends Controller
         $serv->titre = $request->titre; 
         $serv->description = $request->description;
         $serv->save();
-        return response()->json($serv); 
+        // return response()->json($serv); 
     }
 
     /**
@@ -52,7 +52,7 @@ class ServicesController extends Controller
     public function show($id)
     {
         $serv = Services::findOrFail($id);
-        return response()->json($serv); 
+        // return response()->json($serv); 
     }
 
     /**
@@ -79,7 +79,7 @@ class ServicesController extends Controller
         $serv->titre = $request->titre; 
         $serv->description = $request->description;
         $serv->save();
-        return response()->json($serv); 
+        // return response()->json($serv); 
     }
 
     /**
@@ -92,7 +92,7 @@ class ServicesController extends Controller
     {
         $serv = Services::findOrFail($id);
         Services::destroy($id);
-        return response()->json('done'); 
+        // return response()->json('done'); 
 
     }
 }
