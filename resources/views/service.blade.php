@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{-- navbar --}}
+{{-------------------- navbar --------------------}}
 
 @section('active')
     <li class="nav-item">
@@ -8,64 +8,30 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link  navigation active" aria-current="page" href="{{url('/produit')}}">Produits</a>
+        <a class="nav-link  navigation" aria-current="page" href="{{url('/produit')}}">Produits</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link  navigation" aria-current="page" href="{{url('/services')}}">Services</a>
+        <a class="nav-link  navigation active" aria-current="page" href="{{url('/services')}}">Services</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link  navigation" aria-current="page" href="{{url('/contact')}}">Contact</a>
+        <a class="nav-link  navigation " aria-current="page" href="{{url('/contact')}}">Contact</a>
     </li>
 @endsection
 
-{{-- content --}}
+{{-------------------- content --------------------}}
 
 @section('content')
-    <div class="row m-auto">
-
-        <div class="col-lg-3 col-md-12 col-ms-12 mt-3 side">
-            <a href=""><p>Vetement De Travail</p></a>
-            <a href=""><p>Signalisation</p></a>
-            <a href=""><p>Détection Incendie</p></a>
-            <a href=""><p>Matériel Contre Incendie</p></a>
-        </div>
-
-        <div class="col-lg-9 col-md-12 col-ms-12 mt-3">
-
-            <div class="row ">
-
-                @foreach ($prod as $produit)
-                    
-                    <div class="col-lg-4 col-md-6 col-sm-12 m-auto ">
-
-                        <div class="card m-auto " style="width: fit-container;">
-                        
-                            <img style="height: 13rem" src="https://images.unsplash.com/photo-1591557562184-96fd1b4cf797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="..." style="height: 20rem">
-                            <h4 class="card-title text-center mt-3">{{$produit->name}}</h4>
-                            <div class="card-body">
-                                <p class="card-text">{{$produit->description}}</p>
-                            </div>
-                            <a href="{{url('/produit/show/'. $produit->id)}}" class="btn btn-outline-dark m-2">Détail</a>
-                        </div>
-
-                    </div>
-                @endforeach
-
-            </div>
-        </div>
-
-    </div>
 
 @endsection
 
 
-{{-- footer --}}
+{{-------------------- footer --------------------}}
 
 @section('footer')
 
-    <div class="footer mt-4">
+    <div class="footer">
         <p class="text-center mb-5" style="font-size: 40px; font-weight: bold; text-decoration: underline; color: #f3ab71;">Sté Ben-Bazid</p>
 
         <div class="container">
@@ -132,5 +98,5 @@
 {{-- style --}}
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('style/Produit.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/Service.css') }}">
 @endsection

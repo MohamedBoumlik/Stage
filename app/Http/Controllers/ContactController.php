@@ -15,7 +15,7 @@ class ContactController extends Controller
     public function index()
     {
         $msg = Contact::all();
-        return response()->json($msg);
+        return view('contact', compact('msg'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ContactController extends Controller
         $msg->sujet = $request->sujet;
         $msg->message = $request->message;
         $msg->save();
-        return response()->json($msg);
+        // return response()->json($msg);
         
     }
 

@@ -1,0 +1,80 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body nav ul {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 35%;
+}
+
+body nav ul li .navigation {
+  color: #f3ab71 !important;
+  font-size: 141%;
+  margin-left: 25px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+body nav ul li :hover {
+  background-color: #f3ab71;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: 600;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+}
+
+body nav ul li .active {
+  border-bottom: #f3ab71 3px solid !important;
+}
+
+body nav .nav-link {
+  color: #2C3440;
+  font-size: 20px;
+}
+
+body .footer {
+  background-color: #f3ab718c;
+}
+
+body .footer h1 {
+  color: #f3ab71;
+  text-decoration: underline;
+}
+
+body .footer h2 {
+  color: #f3ab71;
+  font-weight: bold;
+}
+
+body .footer .content {
+  color: #fff;
+  font-size: 18px;
+}
+
+body .footer .content .titre {
+  text-decoration: underline;
+}
+
+body .footer .content a {
+  text-decoration: underline;
+  color: #fff;
+  font-size: 18px;
+}
+
+body .footer .content a:hover {
+  color: #f3ab71;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Service.css.map */
