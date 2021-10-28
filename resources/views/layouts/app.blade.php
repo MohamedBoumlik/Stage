@@ -44,7 +44,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-5">
+                    {{-- <ul class="navbar-nav ml-5">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -76,8 +76,8 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
-                    </ul>
+                        @endguest --}}
+                    {{-- </ul> --}}
                 </div>
             {{-- </div> --}}
         </nav>

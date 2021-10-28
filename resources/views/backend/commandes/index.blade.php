@@ -16,11 +16,11 @@
                     </li>
 
                     <li>
-                        <a class="nav-link  navigation active" aria-current="page" href="{{url('/admin/produit')}}"><i class="fas fa-fire-extinguisher" style="margin-right: 10px"></i>Produits</a>
+                        <a class="nav-link  navigation " aria-current="page" href="{{url('/admin/produit')}}"><i class="fas fa-fire-extinguisher" style="margin-right: 10px"></i>Produits</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link  navigation" aria-current="page" href="{{url('/admin/commandes')}}"><i class="fas fa-cart-arrow-down" style="margin-right: 10px"></i>Commandes</a>
+                        <a class="nav-link  navigation active" aria-current="page" href="{{url('/admin/commandes')}}"><i class="fas fa-cart-arrow-down" style="margin-right: 10px"></i>Commandes</a>
                     </li>
 
                     <li class="nav-item">
@@ -47,47 +47,35 @@
 
             <div class="col-9">
 
-                @if (session("addProd"))
-                    <div class="alert alert-success mt-3">{{session("addProd")}}</div>
+                @if (session("dltCmd"))
+                    <div class="alert alert-danger mt-3">{{session("dltCmd")}}</div>
                 @endif
-                
-                @if (session('editProd'))
-                    <div class="alert alert-success mt-3">{{session("editProd")}}</div>
-                @endif
-                
-                @if (session("dltprod"))
-                    <div class="alert alert-danger mt-3">{{session("dltprod")}}</div>
-                @endif
-
-                <div class="curd">
-                   <a href="{{url('/admin/produit/create')}}"> <button class="btn btn-outline-primary mt-3 mb-3"><i class="far fa-plus-square" style="margin-right: 4px"></i>Ajouter</button> </a>
-                </div>
 
                 <table class="table table-hover table-bordered mt-4">
 
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Catégorie</th>
+                            <th>Nom de client</th>
+                            <th>Email Nome de client</th>
+                            <th>Tel Nome de client</th>
+                            <th>Quantité</th>
                             <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach ($prod as $produit)   
+                        @foreach ($cmd as $produit)   
                             <tr>
                                 <td>{{$produit->id}}</td>
-                                <td>{{$produit->pic}}</td>
-                                <td>{{$produit->name}}</td>
-                                <td>{{$produit->description}}</td>
-                                <td>{{$produit->categorie->type}}</td>
+                                <td>{{$produit->client_name}}</td>
+                                <td>{{$produit->client_email}}</td>
+                                <td>{{$produit->client_tel}}</td>
+                                <td>{{$produit->quantite}}</td>
                                 <td class="d-flex text-center m-auto">
                                     <div class="d-flex text-center m-auto">
-                                        <a href="{{url('/admin/produit/edit/'.$produit->id)}}" > <button class="btn btn-outline-info">Edit</button> </a>
-                                        <form action="{{url('/admin/produit/delete/'.$produit->id)}}" method="POST"> @csrf @method('DELETE')<button class="btn btn-outline-danger ml-2">Delete</button></form>
+                                        <a href="{{url('/admin/commandes/show/'.$produit->id)}}" > <button class="btn btn-outline-info">Détail</button> </a>
+                                        <form action="{{url('/admin/commandes/delete/'.$produit->id)}}" method="POST"> @csrf @method('DELETE')<button class="btn btn-outline-danger ml-2">Delete</button></form>
                                     </div>
                                 </td>
                             </tr>

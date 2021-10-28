@@ -52,11 +52,7 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $msg = Contact::findOrFail($id);
-        // return response()->json($msg);
-    }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -64,10 +60,5 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $msg = Contact::findOrFail($id);
-        Contact::destroy($id);
-        // return response()->json('done');
-    }
+    
 }

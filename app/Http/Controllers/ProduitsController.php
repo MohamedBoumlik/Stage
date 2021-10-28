@@ -83,16 +83,16 @@ class ProduitsController extends Controller
      * @param  \App\Models\Produits  $produits
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $prod = Produits::findOrFail($id);
-        $prod->name = $request->name;
-        $prod->pic = $request->pic;
-        $prod->description = $request->description;
-        $prod->categorie_id = $request->type;
-        $prod->save();
-        // return response()->json($prod);
-    }
+    // public function update(Request $request, $id)
+    // {
+    //     $prod = Produits::findOrFail($id);
+    //     $prod->name = $request->name;
+    //     $prod->pic = $request->pic;
+    //     $prod->description = $request->description;
+    //     $prod->categorie_id = $request->type;
+    //     $prod->save();
+    //     // return response()->json($prod);
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -100,10 +100,10 @@ class ProduitsController extends Controller
      * @param  \App\Models\Produits  $produits
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $prod = Produits::findOrFail($id);
-        Produits::destroy($id);
-        // return response()->json('done');
-    }
+    // public function destroy($id)
+    // {
+    //     $prod = Produits::findOrFail($id);
+    //     Produits::destroy($id);
+    //     // return response()->json('done');
+    // }
 }

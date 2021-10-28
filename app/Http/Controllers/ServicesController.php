@@ -34,14 +34,14 @@ class ServicesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $serv = new Services;
-        $serv->titre = $request->titre; 
-        $serv->description = $request->description;
-        $serv->save();
-        // return response()->json($serv); 
-    }
+    // public function store(Request $request)
+    // {
+    //     $serv = new Services;
+    //     $serv->titre = $request->titre; 
+    //     $serv->description = $request->description;
+    //     $serv->save();
+    //     // return response()->json($serv); 
+    // }
 
     /**
      * Display the specified resource.
@@ -73,14 +73,7 @@ class ServicesController extends Controller
      * @param  \App\Models\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $serv = Services::findOrFail($id);
-        $serv->titre = $request->titre; 
-        $serv->description = $request->description;
-        $serv->save();
-        // return response()->json($serv); 
-    }
+  
 
     /**
      * Remove the specified resource from storage.
@@ -88,11 +81,5 @@ class ServicesController extends Controller
      * @param  \App\Models\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $serv = Services::findOrFail($id);
-        Services::destroy($id);
-        // return response()->json('done'); 
-
-    }
+    
 }

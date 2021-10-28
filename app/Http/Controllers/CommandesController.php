@@ -14,11 +14,7 @@ class CommandesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $cmd = Commandes::all();
-        // return response()->json($cmd);
-    }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +23,7 @@ class CommandesController extends Controller
      */
     public function create()
     {
-
+        return view('');
     }
 
     /**
@@ -44,7 +40,7 @@ class CommandesController extends Controller
         $cmd->client_tel = $request->client_tel;
         $cmd->quantite = $request->quantite;
         $cmd->save();
-        // return response()->json($cmd);
+        return view('');
     }
 
     /**
@@ -53,10 +49,5 @@ class CommandesController extends Controller
      * @param  \App\Models\Commandes  $commandes
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $cmd = Commandes::findOrFail($id);
-        Commandes::destroy($id);
-        // return response()->json('done');
-    }
+   
 }

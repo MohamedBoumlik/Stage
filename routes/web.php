@@ -63,11 +63,40 @@ Route::put('/services/update/{id}',"App\Http\Controllers\ServicesController@upda
 Route::delete('/services/delete/{id}',"App\Http\Controllers\ServicesController@destroy");
 Route::get('/services/show/{id}',"App\Http\Controllers\ServicesController@show");
 
-// ---------------------------Admin:---------------------------
+
+
+// ----------------------------------------------------------------- Admin: -----------------------------------------------------------------
+
+
+// ---------------------------Produits:---------------------------
 
 Route::get('/admin/produit',"App\Http\Controllers\Controller@index");
 Route::get('/admin/produit/create',"App\Http\Controllers\Controller@create");
 Route::Post('/admin/produit/store',"App\Http\Controllers\Controller@store");
-// Route::get('/admin/produit/show/{id}',"App\Http\Controllers\Controller@show");
-// Route::put('/admin/produit/update/{id}',"App\Http\Controllers\Controller@update");
-// Route::delete('/admin/produit/delete/{id}',"App\Http\Controllers\Controller@destroy");
+Route::get('/admin/produit/show/{id}',"App\Http\Controllers\Controller@show");
+Route::get('/admin/produit/edit/{id}',"App\Http\Controllers\Controller@edit");
+Route::put('/admin/produit/update/{id}',"App\Http\Controllers\Controller@update");
+Route::delete('/admin/produit/delete/{id}',"App\Http\Controllers\Controller@destroy");
+
+// ---------------------------Contact:---------------------------
+
+Route::get('/admin/contact',"App\Http\Controllers\Controller@indexContact");
+Route::Post('/admin/contact/store',"App\Http\Controllers\Controller@storeContact");
+Route::get('/admin/contact/show/{id}',"App\Http\Controllers\Controller@showContact");
+Route::delete('/admin/contact/delete/{id}',"App\Http\Controllers\Controller@destroyContact");
+
+// ---------------------------Services:---------------------------
+
+Route::get('/admin/services',"App\Http\Controllers\Controller@indexServ");
+Route::get('/admin/services/create',"App\Http\Controllers\Controller@createServ");
+Route::Post('/admin/services/store',"App\Http\Controllers\Controller@storeServ");
+Route::get('/admin/services/edit/{id}',"App\Http\Controllers\Controller@editServ");
+Route::put('/admin/services/update/{id}',"App\Http\Controllers\Controller@updateServ");
+Route::delete('/admin/services/delete/{id}',"App\Http\Controllers\Controller@destroyServ");
+
+// ---------------------------Commandes:---------------------------
+
+Route::get('/admin/commandes',"App\Http\Controllers\Controller@indexCmd");
+Route::get('/admin/commandes/show',"App\Http\Controllers\Controller@showCmd");
+Route::Post('/admin/commandes/store',"App\Http\Controllers\Controller@storeCmd");
+Route::delete('/admin/commandes/delete/{id}',"App\Http\Controllers\Controller@destroyCmd");
