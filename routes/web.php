@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.home');
 });
 
 Auth::routes();
@@ -71,7 +71,7 @@ Route::get('/services/show/{id}',"App\Http\Controllers\ServicesController@show")
 // ---------------------------Produits:---------------------------
 
 Route::get('/admin/produit',"App\Http\Controllers\Controller@index");
-Route::get('/admin/produit/create',"App\Http\Controllers\Controller@create");
+// Route::get('/admin/produit/create',"App\Http\Controllers\Controller@create");
 Route::Post('/admin/produit/store',"App\Http\Controllers\Controller@store");
 Route::get('/admin/produit/show/{id}',"App\Http\Controllers\Controller@show");
 Route::get('/admin/produit/edit/{id}',"App\Http\Controllers\Controller@edit");
@@ -100,3 +100,7 @@ Route::get('/admin/commandes',"App\Http\Controllers\Controller@indexCmd");
 Route::get('/admin/commandes/show',"App\Http\Controllers\Controller@showCmd");
 Route::Post('/admin/commandes/store',"App\Http\Controllers\Controller@storeCmd");
 Route::delete('/admin/commandes/delete/{id}',"App\Http\Controllers\Controller@destroyCmd");
+
+
+Route::get('/admin',"App\Http\Controllers\Controller@homeAdmin");
+

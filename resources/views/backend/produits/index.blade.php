@@ -1,109 +1,138 @@
-@extends('layouts.app')
-
-@section('content')
-
-    <div >
-
-        <div class="row" style="max-width: 100%!important;">
-
-            <div class="col-3 sideBar">
-                <ul class="sideBarList">
-
-                    <li>
-                        <div class="text-center">
-                            <img src="https://www.pngkit.com/png/detail/78-788100_fire-logo-png-svg-free-download-fire-logo.png"  alt="" style="width: 12rem; margin-bottom: 10px">
-                        </div>
-                    </li>
-
-                    <li>
-                        <a class="nav-link  navigation active" aria-current="page" href="{{url('/admin/produit')}}"><i class="fas fa-fire-extinguisher" style="margin-right: 10px"></i>Produits</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link  navigation" aria-current="page" href="{{url('/admin/commandes')}}"><i class="fas fa-cart-arrow-down" style="margin-right: 10px"></i>Commandes</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link  navigation" aria-current="page" href="{{url('/admin/services')}}"><i class="fas fa-concierge-bell" style="margin-right: 10px"></i>Services</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link  navigation" aria-current="page" href="{{url('/admin/contact')}}"><i class="fas fa-headset mr-2" style="margin-right: 10px"></i>Contact</a>
-                    </li>
-
-                    <li>
-                        
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                            @csrf
-                            <div class="text-center" style="margin-top: 70px">
-                                <button class="btn btn-outline-danger"><i class="fas fa-power-off" style="margin-right: 4px"></i>Logout</button>
-                            </div>
-                        </form>
-
-                    </li>
-
-                </ul>
-            </div>
-
-            <div class="col-9">
-
-                @if (session("addProd"))
-                    <div class="alert alert-success mt-3">{{session("addProd")}}</div>
-                @endif
-                
-                @if (session('editProd'))
-                    <div class="alert alert-success mt-3">{{session("editProd")}}</div>
-                @endif
-                
-                @if (session("dltprod"))
-                    <div class="alert alert-danger mt-3">{{session("dltprod")}}</div>
-                @endif
-
-                <div class="curd">
-                   <a href="{{url('/admin/produit/create')}}"> <button class="btn btn-outline-primary mt-3 mb-3"><i class="far fa-plus-square" style="margin-right: 4px"></i>Ajouter</button> </a>
-                </div>
-
-                <table class="table table-hover table-bordered mt-4">
-
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Catégorie</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @foreach ($prod as $produit)   
-                            <tr>
-                                <td>{{$produit->id}}</td>
-                                <td>{{$produit->pic}}</td>
-                                <td>{{$produit->name}}</td>
-                                <td>{{$produit->description}}</td>
-                                <td>{{$produit->categorie->type}}</td>
-                                <td class="d-flex text-center m-auto">
-                                    <div class="d-flex text-center m-auto">
-                                        <a href="{{url('/admin/produit/edit/'.$produit->id)}}" > <button class="btn btn-outline-info">Edit</button> </a>
-                                        <form action="{{url('/admin/produit/delete/'.$produit->id)}}" method="POST"> @csrf @method('DELETE')<button class="btn btn-outline-danger ml-2">Delete</button></form>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
-
-                    </tbody>
-
-                </table>
-            </div>
-
+@extends('layouts.dash')
+@section('Side')
+        <div class="list-group list-group-flush my-3">
+            <a href="/admin" class="list-group-item list-group-item-action bg-transparent second-text "><i
+                    class="fas fa-tachometer-alt me-2"></i>Home</a>
+            <a href="/admin/commandes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
+                    class="fas fa-shopping-cart me-2"></i>Commandes</a>
+            <a href="/admin/produit" class="list-group-item list-group-item-action bg-transparent second-text fw-bold actives"><i
+                    class="fas fa-gift me-2"></i>Produits</a>
+            <a href="/admin/contact" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-comment-dots me-2"></i>Messages</a>
+            <a href="/admin/services" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2"></i>Services</a>
         </div>
-
-    </div>
-
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="{{ asset('style/backend/produits/index.css') }}">
+@section('dashcontent')
+    <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Gestion des <b>Commande</b></h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thomas Hardy</td>
+                            <td>thomashardy@mail.com</td>
+                            <td>89 Chiaroscuro Rd, Portland, USA</td>
+                            <td>(171) 555-2222</td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>        
+    </div>
+    <!-- Add Modal HTML -->
+    <div id="addEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="{{url('/admin/produit/store')}}" method="POST" enctype= multipart/form-data>
+                  @csrf
+
+                    <div class="modal-header">						
+                        <h4 class="modal-title">Add Employee</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">					
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" class="form-control" name='name' required >
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" class="form-control" name='pic' required>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" name='description' required></textarea>
+                        </div>
+                        <div class="form-group">
+                                <select class="form-select"  name="categorie_id" required>
+                                        <option selected></option>
+                                        @foreach ($types as $type)
+                                                <option value='{{$type->id}}'>{{$type->type}}</option>
+                                        @endforeach
+                                </select>
+                        </div>					
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{{--     
+    <!-- Edit Modal HTML -->
+    <div id="editEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">						
+                        <h4 class="modal-title">Edit Employee</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">					
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" required>
+                        </div>					
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-info" value="Save">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> --}}
+  
 @endsection

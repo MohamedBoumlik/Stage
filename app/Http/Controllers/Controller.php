@@ -23,28 +23,50 @@ class Controller extends BaseController
         $this->middleware('auth');
     }
 
-    public function index()
+    public function homeAdmin()
     {
-        $prod = Produits::all();
-        return view('backend.produits.index',compact('prod'));
+        $cmd = Commandes::all();
+        $Contact = Contact::all();
+        $Produits = Produits::all();
+        $countCmd=count($cmd);
+        $countProduit=count($Produits);
+        $countContact=count($Contact);
+        return view('backend.Home',compact('countCmd','countContact', 'countProduit'));
     }
 
-    public function create()
+    // ---------------------------------------------- Produit ---------------------------------------------- 
+
+    public function index()
     {
-        $type = Categories::all();
-        return view('backend.produits.create', compact('type'));
+        $types = Categories::all();
+        $prod = Produits::all();
+        return view('backend.produits.index',compact('prod','types'));
     }
+
+    // public function create()
+    // {
+    //     $type = Categories::all();
+    //     return view('backend.produits.index', compact('type'));
+    // }
 
     public function store(Request $request)
     {
     
         $prod = new Produits;
         $prod->name = $request->name;
-        $prod->pic = $request->pic;
         $prod->description = $request->description;
-        $prod->categorie_id = $request->type;
+        $prod->categorie_id = $request->categorie_id;
+
+         //insertion de la photo
+         $file = $request->pic;
+         $ext = $file->getClientOriginalExtension();
+         $filename = time() . ".".$ext;
+         $filepath ="storage/public/";
+         $file->move($filepath,$filename);
+         $prod->pic = $filepath.$filename;
+
         $prod->save();
-        return view('backend.produits.index')->with('addProd','Produit ajouté avec succès');
+        return redirect()->back()->with('addProd','Produit ajouté avec succès');
 
     }
 

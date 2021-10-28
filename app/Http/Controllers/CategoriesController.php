@@ -14,8 +14,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $cat = Categories::all();
+        // $cat = Categories::all();
         // return response()->json($cat);
+        $type = Categories::all();
+        return view('backend.produits.index', compact('type'));
 
     }
 
@@ -30,6 +32,7 @@ class CategoriesController extends Controller
         $cat = new Categories;
         $cat->type=$request->type;
         $cat->save();
+        
         // return response()->json($cat);
     }
 
