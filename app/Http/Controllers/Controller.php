@@ -28,10 +28,12 @@ class Controller extends BaseController
         $cmd = Commandes::all();
         $Contact = Contact::all();
         $Produits = Produits::all();
+        $serv = Services::all();
         $countCmd=count($cmd);
         $countProduit=count($Produits);
         $countContact=count($Contact);
-        return view('backend.Home',compact('countCmd','countContact', 'countProduit'));
+        $countServ=count($serv);
+        return view('backend.Home',compact('countCmd','countContact', 'countProduit', 'countServ','cmd'));
     }
 
     // ---------------------------------------------- Produit ---------------------------------------------- 
@@ -101,14 +103,14 @@ class Controller extends BaseController
          $prod->pic = $filepath.$filename;
 
         $prod->save();
-        return view('backend.produits.index',compact('prod'))->with("editProd","Mis à jour avec succés");
+        return redirect('/admin/produit')->with("editProd","Produit bien modifiée");
     }
 
     public function destroy($id)
     {
         $prod = Produits::findOrFail($id);
         Produits::destroy($id);
-        return redirect()->back()->with("dltprod","Produit supprimé");
+        return redirect()->back()->with("dltProd","Produit supprimé");
     }
 
     // ---------------------------------------------- Contact ---------------------------------------------- 
@@ -160,7 +162,7 @@ class Controller extends BaseController
          $serv->pic = $filepath.$filename;
 
         $serv->save();
-        return view('backend.services.index')->with('addServ','Service ajouté avec succès');
+        return redirect('/admin/services')->with('addServ','Service ajouté avec succès');
     }
 
     public function editServ($id)
@@ -183,7 +185,7 @@ class Controller extends BaseController
          $file->move($filepath,$filename);
          $serv->pic = $filepath.$filename;
         $serv->save();
-        return view('backend.services.index',compact('serv'))->with("editServ","Mis à jour avec succés");
+        return redirect('/admin/services')->with("editServ","Mis à jour avec succés");
     }
 
     public function destroyServ($id)

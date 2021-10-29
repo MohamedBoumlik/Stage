@@ -3,19 +3,26 @@
         <div class="list-group list-group-flush my-3">
             <a href="/admin" class="list-group-item list-group-item-action bg-transparent second-text "><i
                     class="fas fa-tachometer-alt me-2"></i>Home</a>
-            <a href="/admin/commandes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
+            <a href="/admin/commandes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold actives"><i
                     class="fas fa-shopping-cart me-2"></i>Commandes</a>
-            <a href="/admin/produit" class="list-group-item list-group-item-action bg-transparent second-text fw-bold actives"><i
+            <a href="/admin/produit" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
                     class="fas fa-fire-extinguisher me-2"></i>Produits</a>
             <a href="/admin/contact" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-comment-dots me-2"></i>Messages</a>
             <a href="/admin/services" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-concierge-bell me-2"></i>Services</a>
+            <a href="/categorie" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-layer-group me-2"></i>Catégories</a>
         </div>
 @endsection
 
 @section('dashcontent')
     <div class="container-xl">
+
+        @if (session("dltCmd"))
+            <div class="alert alert-danger">{{session("dltCmd")}}</div>
+        @endif
+
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -40,7 +47,7 @@
 
                         @foreach ($cmd as $item)
                                 
-                                {{-- <tr>
+                                <tr>
                                 <td>{{$item->client_name}}</td>
                                 <td>{{$item->client_email}}</td>
                                 <td>{{$item->client_tel}}</td>
@@ -49,7 +56,7 @@
                                 <td>
                                         <form action="{{url('/admin/commandes/delete/'.$item->id)}}" method="POST"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
                                 </td>
-                                </tr> --}}
+                                </tr>
 
                         @endforeach
 

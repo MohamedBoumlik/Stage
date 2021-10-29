@@ -11,11 +11,26 @@
                     class="fas fa-comment-dots me-2"></i>Messages</a>
             <a href="/admin/services" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-concierge-bell me-2"></i>Services</a>
+            <a href="/categorie" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-layer-group me-2"></i>Catégories</a>
         </div>
 @endsection
 
 @section('dashcontent')
     <div class="container-xl">
+
+        @if (session("addProd"))
+            <div class="alert alert-success">{{session("addProd")}}</div>
+        @endif
+
+        @if (session("editProd"))
+            <div class="alert alert-success">{{session("editProd")}}</div>
+        @endif
+
+        @if (session("dltProd"))
+            <div class="alert alert-danger">{{session("dltProd")}}</div>
+        @endif
+
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -43,10 +58,10 @@
                         @foreach ($prod as $item)
                                 
                                 <tr>
-                                <td><img src="{{ asset($item->pic) }}" height="100px" width="200px"></td>
+                                <td><img src="{{ asset($item->pic) }}" height="100px" width="200px" /></td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->description}}</td>
-                                <td>{{$item->categorie_id}}</td>
+                                <td>{{$item->categorie->type}}</td>
                                 <td>
                                         <a href="{{url('/admin/produit/edit/'.$item->id)}}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                         <form action="{{url('/admin/produit/delete/'.$item->id)}}" method="POST"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>

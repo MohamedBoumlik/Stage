@@ -7,15 +7,22 @@
                     class="fas fa-shopping-cart me-2"></i>Commandes</a>
             <a href="/admin/produit" class="list-group-item list-group-item-action bg-transparent second-text fw-bold actives"><i
                     class="fas fa-fire-extinguisher me-2"></i>Produits</a>
-            <a href="/admin/contact" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            <a href="/admin/contact" class="list-group-item list-group-item-action bg-transparent second-text fw-bold actives"><i
                     class="fas fa-comment-dots me-2"></i>Messages</a>
             <a href="/admin/services" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-concierge-bell me-2"></i>Services</a>
+            <a href="/categorie" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-layer-group me-2"></i>Catégories</a>
         </div>
 @endsection
 
 @section('dashcontent')
     <div class="container-xl">
+
+        @if (session("dltmsg"))
+            <div class="alert alert-danger">{{session("dltmsg")}}</div>
+        @endif
+
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">

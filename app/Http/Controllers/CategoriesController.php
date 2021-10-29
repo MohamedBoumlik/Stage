@@ -16,8 +16,8 @@ class CategoriesController extends Controller
     {
         // $cat = Categories::all();
         // return response()->json($cat);
-        $type = Categories::all();
-        return view('backend.produits.index', compact('type'));
+        $cat = Categories::all();
+        return view('backend.categories.index', compact('cat'));
 
     }
 
@@ -33,7 +33,13 @@ class CategoriesController extends Controller
         $cat->type=$request->type;
         $cat->save();
         
-        // return response()->json($cat);
+        return redirect()->back()->with('addCat','Catégorie ajouté avec succès');
+    }
+
+    public function edit($id){
+
+        $cat = Categories::findOrFail($id);
+        return view('backend.categories.edit', compact('cat'));
     }
 
     /**
@@ -48,7 +54,7 @@ class CategoriesController extends Controller
         $cat = Categories::findOrFail($id);
         $cat->type=$request->type;
         $cat->save();
-        // return response()->json($cat);
+        return redirect('/categorie')->with('editCat','Catégorie bien modifiée');
     }
 
     /**
@@ -57,10 +63,13 @@ class CategoriesController extends Controller
      * @param  \App\Models\Categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $cat = Categories::findOrFail($id);
-        Categories::destroy($id);
-        // return response()->json('done');
-    }
+
+    //  ----------- illogique -----------
+    
+    // public function destroy($id)
+    // {
+    //     $cat = Categories::findOrFail($id);
+    //     Categories::destroy($id);
+    //     return redirect()->back()->with('dltCat','Catégorie supprimé');
+    // }
 }

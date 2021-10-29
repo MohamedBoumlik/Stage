@@ -26,8 +26,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 // Route::resource('categorie',"App\Http\Controllers\CategoriesController");
 Route::get('/categorie',"App\Http\Controllers\CategoriesController@index");
 Route::Post('/categorie/store',"App\Http\Controllers\CategoriesController@store");
-Route::put('/categorie/update',"App\Http\Controllers\CategoriesController@update");
-Route::delete('/categorie/delete/{id}',"App\Http\Controllers\CategoriesController@destroy");
+Route::get('/categorie/edit/{id}',"App\Http\Controllers\CategoriesController@edit");
+Route::put('/categorie/update/{id}',"App\Http\Controllers\CategoriesController@update");
+// Route::delete('/categorie/delete/{id}',"App\Http\Controllers\CategoriesController@destroy"); -------- illogique -------
 
 
 // ---------------------------Produits:---------------------------
@@ -67,6 +68,7 @@ Route::get('/services/show/{id}',"App\Http\Controllers\ServicesController@show")
 
 // ----------------------------------------------------------------- Admin: -----------------------------------------------------------------
 
+Route::get('/admin',"App\Http\Controllers\Controller@homeAdmin");
 
 // ---------------------------Produits:---------------------------
 
@@ -102,5 +104,4 @@ Route::Post('/admin/commandes/store',"App\Http\Controllers\Controller@storeCmd")
 Route::delete('/admin/commandes/delete/{id}',"App\Http\Controllers\Controller@destroyCmd");
 
 
-Route::get('/admin',"App\Http\Controllers\Controller@homeAdmin");
 

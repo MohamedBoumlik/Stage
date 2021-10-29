@@ -1,8 +1,8 @@
 :root {
-    --main-bg-color: #f3ab71;
-    --main-text-color: #009d63;
-    --second-text-color: #bbbec5;
-    --second-bg-color: #c1efde;
+    --main-bg-color: #fff;
+    --main-text-color: #fff;
+    --second-text-color: #fff;
+    --second-bg-color: #3DC1E6;
   }
   
   .primary-text {
@@ -14,7 +14,7 @@
   }
   
   .primary-bg {
-    background-color: var(--main-bg-color);
+    background-color: white;
   }
   
   .secondary-bg {
@@ -74,7 +74,7 @@
   
   .list-group-item.actives {
     background-color: transparent;
-    color: var(--main-text-color);
+    color: #3DC1E6;
     font-weight: bold;
     border: none;
   }
@@ -87,6 +87,7 @@
     #page-content-wrapper {
       min-width: 0;
       width: 100%;
+	  background-color: #80bff1;
     }
   
     #wrapper.toggled #sidebar-wrapper {
@@ -99,7 +100,7 @@
 
 body {
 	color: #566787;
-	background: #f5f5f5;
+	background: #f5f5f5 !important;
 	font-family: 'Varela Round', sans-serif;
 	font-size: 13px;
 }
@@ -323,3 +324,7 @@ table.table .avatar {
 .modal form label {
 	font-weight: normal;
 }	
+
+.list-group-flush>.list-group-item {
+    border-width: 0 0 0px !important;
+}
