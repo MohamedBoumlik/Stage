@@ -1,17 +1,17 @@
 @extends('layouts.dash')
 @section('Side')
-        <div class="list-group list-group-flush my-3">
-            <a href="/admin" class="list-group-item list-group-item-action bg-transparent second-text actives"><i
-                    class="fas fa-tachometer-alt me-2"></i>Home</a>
-            <a href="/admin/commandes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-shopping-cart me-2"></i>Commandes</a>
-            <a href="/admin/produit" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-gift me-2"></i>Produits</a>
-            <a href="/admin/contact" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-comment-dots me-2"></i>Messages</a>
-            <a href="/admin/services" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-map-marker-alt me-2"></i>Services</a>
-        </div>
+    <div class="list-group list-group-flush my-3">
+        <a href="/admin" class="list-group-item list-group-item-action bg-transparent second-text "><i
+                class="fas fa-tachometer-alt me-2"></i>Home</a>
+        <a href="/admin/commandes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
+                class="fas fa-shopping-cart me-2"></i>Commandes</a>
+        <a href="/admin/produit" class="list-group-item list-group-item-action bg-transparent second-text fw-bold actives"><i
+                class="fas fa-fire-extinguisher me-2"></i>Produits</a>
+        <a href="/admin/contact" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-comment-dots me-2"></i>Messages</a>
+        <a href="/admin/services" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-concierge-bell me-2"></i>Services</a>
+    </div>
 @endsection
 @section('dashcontent')
     <div class="container-fluid px-4">
@@ -22,7 +22,7 @@
                         <h3 class="fs-2">{{ $countProduit}}</h3>
                         <p class="fs-5">Products</p>
                     </div>
-                    <i class="fas fa-product fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                    <i class="fas fa-fire-extinguisher fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                 </div>
             </div>
 

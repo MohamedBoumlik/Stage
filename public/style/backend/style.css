@@ -1,5 +1,5 @@
 :root {
-    --main-bg-color: #009d63;
+    --main-bg-color: #f3ab71;
     --main-text-color: #009d63;
     --second-text-color: #bbbec5;
     --second-bg-color: #c1efde;
@@ -150,6 +150,8 @@ body {
 	margin-top: 2px;
 }
 table.table tr th, table.table tr td {
+	vertical-align: middle;
+    text-align: center;
 	border-color: #e9e9e9;
 	padding: 12px 15px;
 	vertical-align: middle;

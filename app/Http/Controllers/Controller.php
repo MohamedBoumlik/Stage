@@ -89,9 +89,17 @@ class Controller extends BaseController
     
         $prod = Produits::findOrFail($id);
         $prod->name = $request->name;
-        $prod->pic = $request->pic;
+        // $prod->pic = $request->pic;
         $prod->description = $request->description;
-        $prod->categorie_id = $request->type;
+        $prod->categorie_id = $request->categorie_id;
+
+        $file = $request->pic;
+         $ext = $file->getClientOriginalExtension();
+         $filename = time() . ".".$ext;
+         $filepath ="storage/public/";
+         $file->move($filepath,$filename);
+         $prod->pic = $filepath.$filename;
+
         $prod->save();
         return view('backend.produits.index',compact('prod'))->with("editProd","Mis à jour avec succés");
     }
@@ -142,6 +150,15 @@ class Controller extends BaseController
         $serv = new Services;
         $serv->titre = $request->titre; 
         $serv->description = $request->description;
+
+        // add pic
+        $file = $request->pic;
+         $ext = $file->getClientOriginalExtension();
+         $filename = time() . ".".$ext;
+         $filepath ="storage/public/";
+         $file->move($filepath,$filename);
+         $serv->pic = $filepath.$filename;
+
         $serv->save();
         return view('backend.services.index')->with('addServ','Service ajouté avec succès');
     }
@@ -157,6 +174,14 @@ class Controller extends BaseController
         $serv = Services::findOrFail($id);
         $serv->titre = $request->titre; 
         $serv->description = $request->description;
+
+        // add pic
+        $file = $request->pic;
+         $ext = $file->getClientOriginalExtension();
+         $filename = time() . ".".$ext;
+         $filepath ="storage/public/";
+         $file->move($filepath,$filename);
+         $serv->pic = $filepath.$filename;
         $serv->save();
         return view('backend.services.index',compact('serv'))->with("editServ","Mis à jour avec succés");
     }
@@ -169,7 +194,7 @@ class Controller extends BaseController
 
     }
 
-    // ---------------------------------------------- Service ---------------------------------------------- 
+    // ---------------------------------------------- commandes ---------------------------------------------- 
 
     public function indexCmd()
     {
