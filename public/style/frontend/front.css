@@ -18,12 +18,12 @@
   }
   
   a {
-    color: #4154f1;
+    color: #f3ab71;
     text-decoration: none;
   }
   
   a:hover {
-    color: #717ff5;
+    color: #f88c09;
     text-decoration: none;
   }
   
@@ -48,7 +48,7 @@
     letter-spacing: 1px;
     font-weight: 700;
     margin: 0;
-    color: #4154f1;
+    color: #fdcda6f6;
     text-transform: uppercase;
   }
   .section-header p {
@@ -57,7 +57,7 @@
     font-size: 38px;
     line-height: 42px;
     font-weight: 700;
-    color: #012970;
+    color: #f3ab71;
   }
   @media (max-width: 768px) {
     .section-header p {
@@ -120,7 +120,7 @@
     right: 15px;
     bottom: 15px;
     z-index: 99999;
-    background: #4154f1;
+    background: #fdcda6f6;
     width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -132,7 +132,7 @@
     line-height: 0;
   }
   .back-to-top:hover {
-    background: #6776f4;
+    background: #f88c09;
     color: #fff;
   }
   .back-to-top.active {
@@ -172,7 +172,7 @@
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #012970;
+    color: #f3ab71;
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
   }
@@ -204,7 +204,7 @@
     font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 700;
-    color: #013289;
+    color: #f0b382;
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -214,7 +214,8 @@
     margin-left: 5px;
   }
   .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-    color: #4154f1;
+    color: #f88c09;
+    text-decoration: underline ;
   }
   .navbar .getstarted, .navbar .getstarted:focus {
     background: #4154f1;
@@ -337,10 +338,10 @@
   .navbar-mobile a, .navbar-mobile a:focus {
     padding: 10px 20px;
     font-size: 15px;
-    color: #012970;
+    color: black;
   }
   .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-    color: #4154f1;
+    color: #f3ab71;
   }
   .navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
     margin: 15px;
@@ -399,8 +400,8 @@
     border-radius: 4px;
     transition: 0.5s;
     color: #fff;
-    background: #4154f1;
-    box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+    background: #fdcda6f6;
+    box-shadow: 0px 5px 30px rgba(255, 167, 116, 0.4);
   }
   .hero .btn-get-started span {
     font-family: "Nunito", sans-serif;
@@ -459,19 +460,19 @@
   # About
   --------------------------------------------------------------*/
   .about .content {
-    background-color: #f6f9ff;
+    background-color: whitesmoke;
     padding: 40px;
   }
   .about h3 {
     font-size: 14px;
     font-weight: 700;
-    color: #4154f1;
+    color: #f3ab71;
     text-transform: uppercase;
   }
   .about h2 {
     font-size: 24px;
     font-weight: 700;
-    color: #012970;
+    color: #fdcda6f6;
   }
   .about p {
     margin: 15px 0 30px 0;
@@ -1249,7 +1250,7 @@
     font-weight: 700;
     margin-bottom: 5px;
     font-size: 20px;
-    color: #012970;
+    color: #f3ab71;
   }
   .team .member .member-info span {
     display: block;
@@ -1359,17 +1360,17 @@
   --------------------------------------------------------------*/
   .contact .info-box {
     color: #444444;
-    background: #fafbff;
+    background: whitesmoke;
     padding: 30px;
   }
   .contact .info-box i {
     font-size: 38px;
     line-height: 0;
-    color: #4154f1;
+    color: #fdcda6f6;
   }
   .contact .info-box h3 {
     font-size: 20px;
-    color: #012970;
+    color: #f3ab71;
     font-weight: 700;
     margin: 20px 0 10px 0;
   }
@@ -1380,7 +1381,7 @@
     margin-bottom: 0;
   }
   .contact .php-email-form {
-    background: #fafbff;
+    background: whitesmoke;
     padding: 30px;
     height: 100%;
   }
@@ -1428,7 +1429,7 @@
     border-radius: 0;
   }
   .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-    border-color: #4154f1;
+    border-color: #fdcda6f6;
   }
   .contact .php-email-form input {
     padding: 10px 15px;
@@ -1437,7 +1438,7 @@
     padding: 12px 15px;
   }
   .contact .php-email-form button[type=submit] {
-    background: #4154f1;
+    background: #f3ab71;
     border: 0;
     padding: 10px 30px;
     color: #fff;
@@ -1445,7 +1446,7 @@
     border-radius: 4px;
   }
   .contact .php-email-form button[type=submit]:hover {
-    background: #5969f3;
+    background: #f3ab71;
   }
   @-webkit-keyframes animate-loading {
     0% {
@@ -1960,7 +1961,7 @@
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #012970;
+    color: #f3ab71;
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
   }
@@ -1979,12 +1980,12 @@
     transition: 0.3s;
   }
   .footer .footer-top .social-links a:hover {
-    color: #012970;
+    color: #f3ab71;
   }
   .footer .footer-top h4 {
     font-size: 16px;
     font-weight: bold;
-    color: #012970;
+    color: #f3ab71;
     text-transform: uppercase;
     position: relative;
     padding-bottom: 12px;
@@ -2012,13 +2013,13 @@
     padding-top: 0;
   }
   .footer .footer-top .footer-links ul a {
-    color: #013289;
+    color: black;
     transition: 0.3s;
     display: inline-block;
     line-height: 1;
   }
   .footer .footer-top .footer-links ul a:hover {
-    color: #4154f1;
+    text-decoration: underline;
   }
   .footer .footer-top .footer-contact p {
     line-height: 26px;

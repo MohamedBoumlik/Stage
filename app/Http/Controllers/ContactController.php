@@ -12,11 +12,11 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $msg = Contact::all();
-        return view('contact', compact('msg'));
-    }
+    // public function index()
+    // {
+    //     $msg = Contact::all();
+    //     return view('contact', compact('msg'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -42,7 +42,7 @@ class ContactController extends Controller
         $msg->sujet = $request->sujet;
         $msg->message = $request->message;
         $msg->save();
-        // return response()->json($msg);
+        return redirect()->back();
         
     }
 
