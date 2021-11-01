@@ -41,6 +41,18 @@ class ContactController extends Controller
         $msg->email = $request->email;
         $msg->sujet = $request->sujet;
         $msg->message = $request->message;
+
+        $to_email ="boumlik.mohamed.19@gmail.com";
+
+        $title="Message test";
+        $message="vous avez un nouveau message sur test:". $msg;
+        // $cc="";
+        $data = array("body"=>$message);
+
+        Mail::send('mail', $data, function($message) use ($to_email, $title) {
+            $message->to($to_email)->subject($title);
+        });
+
         $msg->save();
         return redirect()->back();
         

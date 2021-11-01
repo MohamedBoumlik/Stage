@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produits;
+use App\Models\Services;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class ProduitsController extends Controller
     public function index()
     {
         $prod = Produits::all();
-        return view('produits',compact('prod'));
+        $serv = Services::all();
+        return view('home',compact('prod', 'serv', ));
     }
 
     /**

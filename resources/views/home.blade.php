@@ -13,10 +13,13 @@
   <!-- Favicons -->
   <link href="/../img/favicon.png" rel="icon">
   <link href="/../img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  
   <!-- Vendor CSS Files -->
   <link href="/../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -59,6 +62,7 @@
             </ul>
           </li> --}}
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a href="#"><i class="bi bi-cart" style="font-size: 25px"></i></a></li>
           {{-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> --}}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -433,17 +437,19 @@
         </header>
 
         <div class="row gy-4">
+          @foreach ($serv as $item)
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-box orange">
+                <img src="{{asset($item->pic)}}" width="70px" height="70px" style="border-radius: 7px" class="mb-2">
+                <h3>{{$item->titre}}</h3>
+                <p>{{$item->description}}</p>
+                <a href="#contact" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div> 
+          @endforeach
+          
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-box blue">
-              <i class="ri-discuss-line icon"></i>
-              <h3>Nesciunt Mete</h3>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          {{-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-box orange">
               <i class="ri-discuss-line icon"></i>
               <h3>Eosle Commodi</h3>
@@ -486,7 +492,7 @@
               <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
               <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
-          </div>
+          </div> --}}
 
         </div>
 
@@ -1156,7 +1162,8 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="{{url('/contact/store')}}" method="post" class="php-email-form">
+            <form action="{{url('/contact/store')}}" method="post" >
+              @csrf
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -1176,11 +1183,11 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
+                  {{-- <div class="loading">Loading</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Votre message a été envoyé. Merci!</div>
+                  <div class="sent-message">Votre message a été envoyé. Merci!</div> --}}
 
-                  <button type="submit">Envoyer le message</button>
+                  <button >Envoyer le message</button>
                 </div>
 
               </div>

@@ -8,13 +8,22 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+*{
+  font-family: 'Lato', sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
+
+}
 :root {
     scroll-behavior: smooth;
   }
-  
+  /* *{
+    font-family: 'Lato', sans-serif;
+
+  } */
   body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
+    /* font-family: 'Lato', sans-serif; */
   }
   
   a {
@@ -933,8 +942,8 @@
     border: 1px solid #fff;
   }
   .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-    color: #4154f1;
-    border-color: #4154f1;
+    color: #f3ab71;
+    border-color: #f3ab71;
   }
   .portfolio #portfolio-flters li:last-child {
     margin-right: 0;
