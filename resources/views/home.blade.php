@@ -1154,14 +1154,14 @@
                 <div class="info-box">
                   <i class="bi bi-clock"></i>
                   <h3>Heures d'ouverture</h3>
-                  <p>Lundi-vendredi de 9:00AM à 05:00PM</p>
+                  <p>Lundi-vendredi  9:00AM-05:00PM</p>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-lg-6 p-4" style="background-color: whitesmoke">
             <form action="{{url('/contact/store')}}" method="post" >
               @csrf
               <div class="row gy-4">
@@ -1187,7 +1187,7 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Votre message a été envoyé. Merci!</div> --}}
 
-                  <button >Envoyer le message</button>
+                  <button class="btn btn-outline-dark">Envoyer le message</button>
                 </div>
 
               </div>
@@ -1238,8 +1238,8 @@
               <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div> --}}
           </div>
-
-          <div class="col-lg-2 col-6 footer-links">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-3 col-12 footer-links text-center">
             <h4>Navigation</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="#hero">Accueil</a></li>
@@ -1250,7 +1250,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-2 col-6 footer-links">
+          {{-- <div class="col-lg-2 col-6 footer-links">
             <h4>Nos Services</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
@@ -1259,7 +1259,7 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
-          </div>
+          </div> --}}
 
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Contact Us</h4>

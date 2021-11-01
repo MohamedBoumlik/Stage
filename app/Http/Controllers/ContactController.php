@@ -7,33 +7,6 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    // public function index()
-    // {
-    //     $msg = Contact::all();
-    //     return view('contact', compact('msg'));
-    // }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $msg = new Contact;
@@ -42,14 +15,14 @@ class ContactController extends Controller
         $msg->sujet = $request->sujet;
         $msg->message = $request->message;
 
-        $to_email ="boumlik.mohamed.19@gmail.com";
+        $to_email ="benbazide.0000@gmail.com";
 
         $title="Message test";
         $message="vous avez un nouveau message sur test:". $msg;
         // $cc="";
         $data = array("body"=>$message);
 
-        Mail::send('mail', $data, function($message) use ($to_email, $title) {
+        Mail::send('mailee', $data, function($message) use ($to_email, $title) {
             $message->to($to_email)->subject($title);
         });
 
@@ -57,20 +30,5 @@ class ContactController extends Controller
         return redirect()->back();
         
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Contact  $contact
-     * @return \Illuminate\Http\Response
-     */
-    
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Contact  $contact
-     * @return \Illuminate\Http\Response
-     */
     
 }
