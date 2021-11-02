@@ -72,4 +72,8 @@ class CategoriesController extends Controller
     //     Categories::destroy($id);
     //     return redirect()->back()->with('dltCat','Catégorie supprimé');
     // }
+
+
+
+
 }

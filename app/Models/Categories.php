@@ -9,9 +9,5 @@ class Categories extends Model
 {
     use HasFactory;
 
-    public function produits () {
-
-        return $this->hasMany("App\Models\Produits")->get();
-        
-    }
+ 
 }

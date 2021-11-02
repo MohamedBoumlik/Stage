@@ -32,7 +32,8 @@ class HomeController extends Controller
         $prod = Produits::all();
         $serv = Services::all();
         $cat = Categories::all();
-        return view('home',compact('prod', 'serv','cat' ));
+        // $categ = Categories::all();
+        return view('home',compact('prod', 'serv','cat'));
         // return view('home');
     }
 

@@ -705,22 +705,25 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+
+              <li onclick='allProds()'>Tous les produits</li>
+              @foreach ($cat as $item)
+                <li data-filter=".filter-app" onclick='select("{{$item->id}}")'>{{$item->type}}</li> 
+              @endforeach
+
             </ul>
           </div>
         </div>
         
         <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          @foreach ($prod as $item)
+          <div  class="col-lg-4 col-md-6 portfolio-item filter-app toutimg   a{{$item->categorie_id}}" style="display: block">
             <div class="portfolio-wrap">
-              <img src="/../img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="{{asset($item->pic)}}" class="img-fluid" alt="" style="height: 276px; width: 443px">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
+                <h4>{{$item->name}}</h4>
+                <p>{{$item->description}}</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
@@ -728,8 +731,10 @@
               </div>
             </div>
           </div>
+          @endforeach
+          
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="/../img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -839,7 +844,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
 
         </div>
 
@@ -1287,6 +1292,39 @@
   <script src="/../vendor/purecounter/purecounter.js"></script>
   <script src="/../vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/../vendor/glightbox/js/glightbox.min.js"></script>
+
+  {{-- category filter script --}}
+
+  <script>
+    function select(e){
+
+      var allImg = document.querySelectorAll('.toutimg');
+      
+      for(var i = 0; i<allImg.length; i++){
+        allImg[i].style.display= 'none';
+      }
+
+      var allImg1 = document.querySelectorAll('.a'+e);
+
+      for(var j = 0; j<allImg1.length; j++){
+        allImg1[j].style.display= 'block';
+
+      }
+      
+      // document.getElementById(e).style.display = 'block';
+
+    }
+
+    function allProds(){
+
+      var allImg = document.querySelectorAll('.toutimg');
+
+      for(var i = 0; i<allImg.length; i++){
+        allImg[i].style.display= 'block';
+      }
+
+    }
+  </script>
 
   <!-- Template Main JS File -->
   <script src="/../js/main.js"></script>
