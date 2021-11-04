@@ -56,6 +56,7 @@ class Controller extends BaseController
     
         $prod = new Produits;
         $prod->name = $request->name;
+        $prod->prix = $request->prix;
         $prod->description = $request->description;
         $prod->categorie_id = $request->categorie_id;
 
@@ -91,7 +92,7 @@ class Controller extends BaseController
     
         $prod = Produits::findOrFail($id);
         $prod->name = $request->name;
-        // $prod->pic = $request->pic;
+        $prod->prix = $request->prix;
         $prod->description = $request->description;
         $prod->categorie_id = $request->categorie_id;
 

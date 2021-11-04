@@ -1013,11 +1013,11 @@
   }
   .portfolio .portfolio-wrap .portfolio-info h4 {
     font-size: 20px;
-    color: #f88c09;
+    color: black;
     font-weight: 700;
   }
   .portfolio .portfolio-wrap .portfolio-info p {
-    color: #f88c09;
+    color: black;
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
@@ -1030,7 +1030,7 @@
   }
   .portfolio .portfolio-wrap .portfolio-links a {
     color: #fff;
-    background: #fdcda6f6;
+    background: black;
     margin: 10px 2px;
     width: 36px;
     height: 36px;
@@ -1043,7 +1043,7 @@
   .portfolio .portfolio-wrap .portfolio-links a i {
     font-size: 24px;
     line-height: 0;
-    color: #f88c09;
+    color: white;
   }
   .portfolio .portfolio-wrap .portfolio-links a:hover {
     background: #fdcda6f6;

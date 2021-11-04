@@ -64,14 +64,13 @@ class CategoriesController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  ----------- illogique -----------
     
-    // public function destroy($id)
-    // {
-    //     $cat = Categories::findOrFail($id);
-    //     Categories::destroy($id);
-    //     return redirect()->back()->with('dltCat','Catégorie supprimé');
-    // }
+    public function destroy($id)
+    {
+        $cat = Categories::findOrFail($id);
+        Categories::destroy($id);
+        return redirect()->back()->with(' ','Catégorie supprimé');
+    }
 
 
 

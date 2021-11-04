@@ -28,6 +28,10 @@
             <div class="alert alert-success">{{session("editCat")}}</div>
         @endif
 
+        @if (session("dltCat"))
+            <div class="alert alert-success">{{session("dltCat")}}</div>
+        @endif
+
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -55,6 +59,7 @@
                                 <td>{{$item->type}}</td>
                                 <td>
                                     <a href="{{url('/categorie/edit/'.$item->id)}}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                    <form action="{{url('categorie/delete/'.$item->id)}}" method="POST"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
                                 </td>
                                 </tr>
 

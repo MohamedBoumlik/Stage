@@ -48,6 +48,7 @@
                         <tr>
                             <th>Image de produit</th>
                             <th>Nom</th>
+                            <th>Prix</th>
                             <th>Description</th>
                             <th>Catégorie</th>
                             <th>Actions</th>
@@ -60,6 +61,7 @@
                                 <tr>
                                 <td><img src="{{ asset($item->pic) }}" height="100px" width="200px" /></td>
                                 <td>{{$item->name}}</td>
+                                <td>{{$item->prix}}</td>
                                 <td>{{$item->description}}</td>
                                 <td>{{$item->categorie->type}}</td>
                                 <td>
@@ -92,6 +94,11 @@
                         <div class="form-group">
                             <label>Nom</label>
                             <input type="text" class="form-control" name='name' placeholder="Entrez le nom" required >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Prix</label>
+                            <input type="number" class="form-control" name='prix' placeholder="Entrez le prix" required >
                         </div>
                         <div class="form-group">
                             <label>La Photo De Produit</label>

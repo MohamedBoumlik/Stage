@@ -24,18 +24,19 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 // ---------------------------Categories:---------------------------
 
 // Route::resource('categorie',"App\Http\Controllers\CategoriesController");
-// Route::get('/categorie',"App\Http\Controllers\CategoriesController@index");
-// Route::Post('/categorie/store',"App\Http\Controllers\CategoriesController@store");
-// Route::get('/categorie/edit/{id}',"App\Http\Controllers\CategoriesController@edit");
-// Route::put('/categorie/update/{id}',"App\Http\Controllers\CategoriesController@update");
-// // Route::delete('/categorie/delete/{id}',"App\Http\Controllers\CategoriesController@destroy"); -------- illogique -------
+Route::get('/categorie',"App\Http\Controllers\CategoriesController@index");
+Route::Post('/categorie/store',"App\Http\Controllers\CategoriesController@store");
+Route::get('/categorie/edit/{id}',"App\Http\Controllers\CategoriesController@edit");
+Route::put('/categorie/update/{id}',"App\Http\Controllers\CategoriesController@update");
+Route::delete('/categorie/delete/{id}',"App\Http\Controllers\CategoriesController@destroy"); 
+// -------- illogique -------
 
 
 // ---------------------------Produits:---------------------------
 
 Route::get('/',"App\Http\Controllers\HomeController@index");
 // Route::Post('/produit/store',"App\Http\Controllers\HomeController@store");
-Route::get('/produit/show/{id}',"App\Http\Controllers\ProduitsController@show");
+Route::get('/produit/show/{id}',"App\Http\Controllers\HomeController@show");
 Route::put('/produit/update/{id}',"App\Http\Controllers\ProduitsController@update");
 Route::delete('/produit/delete/{id}',"App\Http\Controllers\ProduitsController@destroy");
 
@@ -62,7 +63,7 @@ Route::delete('/contact/delete/{id}',"App\Http\Controllers\ContactController@des
 // Route::Post('/services/store',"App\Http\Controllers\ServicesController@store");
 // Route::put('/services/update/{id}',"App\Http\Controllers\ServicesController@update");
 // Route::delete('/services/delete/{id}',"App\Http\Controllers\ServicesController@destroy");
-// Route::get('/services/show/{id}',"App\Http\Controllers\ServicesController@show");
+Route::get('/services/show/{id}',"App\Http\Controllers\HomeController@show");
 
 
 
@@ -105,3 +106,5 @@ Route::delete('/admin/commandes/delete/{id}',"App\Http\Controllers\Controller@de
 
 
 
+Route::post('/panier/add/{id}','App\Http\Controllers\HomeController@store');
+Route::get('/panier','App\Http\Controllers\HomeController@store');

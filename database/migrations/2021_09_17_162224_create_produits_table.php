@@ -18,7 +18,8 @@ class CreateProduitsTable extends Migration
             $table->string('name');
             $table->string('pic');
             $table->string('description');
-            $table->foreignId('categorie_id')->constrained()->cascade();
+            $table->float('prix');
+            $table->foreignId('categorie_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

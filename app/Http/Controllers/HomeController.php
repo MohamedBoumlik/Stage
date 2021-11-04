@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use Mail;
+use Cart;
 
 
 class HomeController extends Controller
@@ -17,10 +18,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest');
+    // }
 
     /**
      * Show the application dashboard.
@@ -36,6 +37,7 @@ class HomeController extends Controller
         return view('home',compact('prod', 'serv','cat'));
         // return view('home');
     }
+
 
     public function store(Request $request)
     {
@@ -70,5 +72,33 @@ class HomeController extends Controller
         $msg->save();
     
         return redirect()->back();
+    }
+
+
+    public function show($id)
+    {
+        $serv = Services::findOrFail($id);
+        return view('servShow', compact('serv')); 
+    }
+
+    public function add(Request $request){
+        $produit= Produits::find($request->id) ;
+        Cart::add(array(
+            'id' => $produit->id, // inique row ID
+            'name' => $produit->name,
+            'price' => $produit->prix,
+            'quantity' => 1,
+            'photo' => array($produit->path) ,
+            'attributes' => array()
+        ));
+        return redirect('/panier');
+
+    }
+
+    public function panier(){
+        $content = Cart::getContent();
+        dd($content);
+
+        // return view('panier',["content"=>$content]);
     }
 }

@@ -19,6 +19,8 @@ class CreateCommandesTable extends Migration
             $table->string('client_email');
             $table->string('client_tel');
             $table->integer('quantite');
+            $table->foreignId('produit_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string('etat');
             $table->timestamps();
         });
     }
