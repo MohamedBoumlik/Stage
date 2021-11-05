@@ -15,6 +15,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Favicons -->
+    <link href="/../img/favicon.png" rel="icon">
+    
     <title>Admin Dashboard</title>
 </head>
 
@@ -22,7 +26,7 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"> <img src="" alt=""></div>
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"> <img src="/../img/logo.png" width="100vw" height="100px"></div>
                     @yield('Side')
         </div>
         <!-- /#sidebar-wrapper -->

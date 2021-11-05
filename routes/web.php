@@ -21,16 +21,10 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// ---------------------------Categories:---------------------------
+// ---------------------------Panier:---------------------------
 
-// Route::resource('categorie',"App\Http\Controllers\CategoriesController");
-Route::get('/categorie',"App\Http\Controllers\CategoriesController@index");
-Route::Post('/categorie/store',"App\Http\Controllers\CategoriesController@store");
-Route::get('/categorie/edit/{id}',"App\Http\Controllers\CategoriesController@edit");
-Route::put('/categorie/update/{id}',"App\Http\Controllers\CategoriesController@update");
-Route::delete('/categorie/delete/{id}',"App\Http\Controllers\CategoriesController@destroy"); 
-// -------- illogique -------
-
+Route::post('/panier/add/{id}','App\Http\Controllers\HomeController@add');
+Route::get('/panier','App\Http\Controllers\HomeController@panier');
 
 // ---------------------------Produits:---------------------------
 
@@ -69,42 +63,49 @@ Route::get('/services/show/{id}',"App\Http\Controllers\HomeController@show");
 
 // ----------------------------------------------------------------- Admin: -----------------------------------------------------------------
 
-Route::get('/admin',"App\Http\Controllers\Controller@homeAdmin");
+Route::get('/admin',"App\Http\Controllers\Controller@homeAdmin")->middleware('auth');
 
 // ---------------------------Produits:---------------------------
 
-Route::get('/admin/produit',"App\Http\Controllers\Controller@index");
+Route::get('/admin/produit',"App\Http\Controllers\Controller@index")->middleware('auth');
 // Route::get('/admin/produit/create',"App\Http\Controllers\Controller@create");
-Route::Post('/admin/produit/store',"App\Http\Controllers\Controller@store");
-Route::get('/admin/produit/show/{id}',"App\Http\Controllers\Controller@show");
-Route::get('/admin/produit/edit/{id}',"App\Http\Controllers\Controller@edit");
-Route::put('/admin/produit/update/{id}',"App\Http\Controllers\Controller@update");
-Route::delete('/admin/produit/delete/{id}',"App\Http\Controllers\Controller@destroy");
+Route::Post('/admin/produit/store',"App\Http\Controllers\Controller@store")->middleware('auth');
+Route::get('/admin/produit/show/{id}',"App\Http\Controllers\Controller@show")->middleware('auth');
+Route::get('/admin/produit/edit/{id}',"App\Http\Controllers\Controller@edit")->middleware('auth');
+Route::put('/admin/produit/update/{id}',"App\Http\Controllers\Controller@update")->middleware('auth');
+Route::delete('/admin/produit/delete/{id}',"App\Http\Controllers\Controller@destroy")->middleware('auth');
 
 // ---------------------------Contact:---------------------------
 
-Route::get('/admin/contact',"App\Http\Controllers\Controller@indexContact");
+Route::get('/admin/contact',"App\Http\Controllers\Controller@indexContact")->middleware('auth');
 // Route::Post('/admin/contact/store',"App\Http\Controllers\Controller@storeContact");
-Route::get('/admin/contact/show/{id}',"App\Http\Controllers\Controller@showContact");
-Route::delete('/admin/contact/delete/{id}',"App\Http\Controllers\Controller@destroyContact");
+Route::get('/admin/contact/show/{id}',"App\Http\Controllers\Controller@showContact")->middleware('auth');
+Route::delete('/admin/contact/delete/{id}',"App\Http\Controllers\Controller@destroyContact")->middleware('auth');
 
 // ---------------------------Services:---------------------------
 
-Route::get('/admin/services',"App\Http\Controllers\Controller@indexServ");
-Route::get('/admin/services/create',"App\Http\Controllers\Controller@createServ");
-Route::Post('/admin/services/store',"App\Http\Controllers\Controller@storeServ");
-Route::get('/admin/services/edit/{id}',"App\Http\Controllers\Controller@editServ");
-Route::put('/admin/services/update/{id}',"App\Http\Controllers\Controller@updateServ");
-Route::delete('/admin/services/delete/{id}',"App\Http\Controllers\Controller@destroyServ");
+Route::get('/admin/services',"App\Http\Controllers\Controller@indexServ")->middleware('auth');
+Route::get('/admin/services/show/{id}',"App\Http\Controllers\Controller@showServ")->middleware('auth');
+Route::get('/admin/services/create',"App\Http\Controllers\Controller@createServ")->middleware('auth');
+Route::Post('/admin/services/store',"App\Http\Controllers\Controller@storeServ")->middleware('auth');
+Route::get('/admin/services/edit/{id}',"App\Http\Controllers\Controller@editServ")->middleware('auth');
+Route::put('/admin/services/update/{id}',"App\Http\Controllers\Controller@updateServ")->middleware('auth');
+Route::delete('/admin/services/delete/{id}',"App\Http\Controllers\Controller@destroyServ")->middleware('auth');
 
 // ---------------------------Commandes:---------------------------
 
-Route::get('/admin/commandes',"App\Http\Controllers\Controller@indexCmd");
-Route::get('/admin/commandes/show',"App\Http\Controllers\Controller@showCmd");
-Route::Post('/admin/commandes/store',"App\Http\Controllers\Controller@storeCmd");
-Route::delete('/admin/commandes/delete/{id}',"App\Http\Controllers\Controller@destroyCmd");
+Route::get('/admin/commandes',"App\Http\Controllers\Controller@indexCmd")->middleware('auth');
+Route::get('/admin/commandes/show',"App\Http\Controllers\Controller@showCmd")->middleware('auth');
+Route::Post('/admin/commandes/store',"App\Http\Controllers\Controller@storeCmd")->middleware('auth');
+Route::delete('/admin/commandes/delete/{id}',"App\Http\Controllers\Controller@destroyCmd")->middleware('auth');
+
+// ---------------------------Categories:---------------------------
+
+// Route::resource('categorie',"App\Http\Controllers\CategoriesController");
+Route::get('/categorie',"App\Http\Controllers\CategoriesController@index")->middleware('auth');
+Route::Post('/categorie/store',"App\Http\Controllers\CategoriesController@store")->middleware('auth');
+Route::get('/categorie/edit/{id}',"App\Http\Controllers\CategoriesController@edit")->middleware('auth');
+Route::put('/categorie/update/{id}',"App\Http\Controllers\CategoriesController@update")->middleware('auth');
+Route::delete('/categorie/delete/{id}',"App\Http\Controllers\CategoriesController@destroy")->middleware('auth'); 
 
 
-
-Route::post('/panier/add/{id}','App\Http\Controllers\HomeController@store');
-Route::get('/panier','App\Http\Controllers\HomeController@store');

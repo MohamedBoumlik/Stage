@@ -48,8 +48,8 @@
                                         {{ __('Remember Me') }}
                                     </label>
                                     @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                @endif
+                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline ml-5">Register</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>

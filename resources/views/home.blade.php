@@ -41,7 +41,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="{{url('/')}}" class="logo d-flex align-items-center">
-        <img src="/../img/logo.png" alt="">
+        <img src="/../img/logo.png">
         <span>Ben-Bazide</span>
       </a>
 
@@ -426,7 +426,8 @@
 
     </section><!-- End Features Section --> --}}
 
-    <!-- ======= Services Section ======= -->
+    <!-- ======================================== Services Section ======================================== -->
+
     <section id="services" class="services">
 
       <div class="container" data-aos="fade-up">
@@ -444,7 +445,7 @@
               <div class="service-box orange">
                 <img src="{{asset($item->pic)}}" width="70px" height="70px" style="border-radius: 7px" class="mb-2">
                 <h3>{{$item->titre}}</h3>
-                <p>{{$item->description}}</p>
+                <p style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->description}}</p>
                 <a href="{{url('/services/show/'.$item->id)}}" class="read-more"><span>Lire la suite</span> <i class="bi bi-arrow-right"></i></a>
               </div>
             </div> 
@@ -675,7 +676,7 @@
         <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
           @foreach ($prod as $item)
-          <form action="{{ url('/panier/add/'.$item->id) }}" >
+          <form action="{{ url('/panier/add/'.$item->id) }}" method="POST">
             @csrf
             <div  class="col-lg-4 col-md-6 portfolio-item filter-app toutimg   a{{$item->categorie_id}}" style="display: block">
               <div class="portfolio-wrap">
@@ -683,7 +684,7 @@
                 <div class="portfolio-info">
                   <h3 style="font-size: 40px; font-weight: 700;">{{$item->name}}</h3>
                   <h4>{{$item->prix}} DH</h4>
-                  <p>{{$item->description}}</p>
+                  <p style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->description}}</p>
                   <div class="portfolio-links">
                     {{-- <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Ajouter au panier"><i class="bi bi-plus"></i></a> --}}
                     <button  title="Ajouter au panier"><i class="bi bi-plus"></i></button>

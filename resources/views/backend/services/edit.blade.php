@@ -25,8 +25,7 @@
                     @csrf
                     @method('PUT')
                       <div class="modal-header">						
-                          <h4 class="modal-title">Modifier service</h4>
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title text-center m-auto">Modifier service</h4>
                       </div>
   
                       <div class="modal-body">					
@@ -48,7 +47,6 @@
                           					
                       </div>
                       <div class="modal-footer">
-                          <input type="button" class="btn btn-outline-danger" data-dismiss="modal" value="Annuler">
                           <input type="submit" class="btn btn-outline-dark" value="Modifier">
                       </div>
                   </form>

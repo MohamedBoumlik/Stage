@@ -18,6 +18,19 @@
 
 @section('dashcontent')
     <div class="container-xl">
+
+        @if (session("addServ"))
+            <div class="alert alert-success">{{session("addServ")}}</div>
+        @endif
+
+        @if (session("editServ"))
+            <div class="alert alert-success">{{session("editServ")}}</div>
+        @endif
+
+        @if (session("dltServ"))
+            <div class="alert alert-danger">{{session("dltServ")}}</div>
+        @endif
+
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -34,7 +47,7 @@
                     <thead>
                         <tr>
                             <th>Image de service</th>
-                            <th>titre de service</th>
+                            <th>Titre de service</th>
                             <th>Description</th>
                             <th>Actions</th>
                         </tr>
@@ -44,13 +57,14 @@
                         @foreach ($serv as $item)
                                 
                                 <tr>
-                                <td><img src="{{ asset($item->pic) }}" height="100px" width="200px"></td>
-                                <td>{{$item->titre}}</td>
-                                <td>{{$item->description}}</td>
-                                <td>
-                                        <a href="{{url('/admin/services/edit/'.$item->id)}}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                        <form action="{{url('/admin/services/delete/'.$item->id)}}" method="POST"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
-                                </td>
+                                    <td><img src="{{ asset($item->pic) }}" height="100px" width="200px"></td>
+                                    <td>{{$item->titre}}</td>
+                                    <td style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->description}}</td>
+                                    <td>
+                                        <p><a href="{{url('/admin/services/show/'.$item->id)}}" title="Suite"><i class="fas fa-ellipsis-h"></i></a></p>
+                                        <p><a href="{{url('/admin/services/edit/'.$item->id)}}" class="edit" title="Éditer"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a></p>
+                                        <form action="{{url('/admin/services/delete/'.$item->id)}}" method="POST" title="Supprimer"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
+                                    </td>
                                 </tr>
 
                         @endforeach

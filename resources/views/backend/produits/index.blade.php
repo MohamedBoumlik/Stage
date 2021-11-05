@@ -48,7 +48,7 @@
                         <tr>
                             <th>Image de produit</th>
                             <th>Nom</th>
-                            <th>Prix</th>
+                            <th>Prix(DH)</th>
                             <th>Description</th>
                             <th>Catégorie</th>
                             <th>Actions</th>
@@ -58,17 +58,18 @@
 
                         @foreach ($prod as $item)
                                 
-                                <tr>
+                            <tr>
                                 <td><img src="{{ asset($item->pic) }}" height="100px" width="200px" /></td>
-                                <td>{{$item->name}}</td>
+                                <td  style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->name}}</td>
                                 <td>{{$item->prix}}</td>
-                                <td>{{$item->description}}</td>
-                                <td>{{$item->categorie->type}}</td>
+                                <td style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->description}}</td>
+                                <td >{{$item->categorie->type}}</td>
                                 <td>
-                                        <a href="{{url('/admin/produit/edit/'.$item->id)}}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                        <form action="{{url('/admin/produit/delete/'.$item->id)}}" method="POST"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
+                                    <p><a href="{{url('/admin/produit/show/'.$item->id)}}" title="Suite"><i class="fas fa-ellipsis-h"></i></a></p>
+                                    <p><a href="{{url('/admin/produit/edit/'.$item->id)}}" class="edit" title="Éditer"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a></p>
+                                    <form action="{{url('/admin/produit/delete/'.$item->id)}}" method="POST" title='Supprimer'> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
                                 </td>
-                                </tr>
+                            </tr>
 
                         @endforeach
 

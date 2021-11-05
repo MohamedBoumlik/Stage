@@ -39,40 +39,40 @@ class HomeController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
-        $msg = new Contact;
-        $msg->name = $request->name;
-        $msg->email = $request->email;
-        $msg->sujet = $request->sujet;
-        $msg->message = $request->message;
+    // public function store(Request $request)
+    // {
+    //     $msg = new Contact;
+    //     $msg->name = $request->name;
+    //     $msg->email = $request->email;
+    //     $msg->sujet = $request->sujet;
+    //     $msg->message = $request->message;
 
-        // $to_email="mohamed.boumlik.19@gmail.com";
-        // $title="Message test";
-        // $message="vous avez un nouveau message sur test:". $msg;
+    //     // $to_email="mohamed.boumlik.19@gmail.com";
+    //     // $title="Message test";
+    //     // $message="vous avez un nouveau message sur test:". $msg;
 
-        // // $cc="";
-        // $data = array("body"=>$message);
+    //     // // $cc="";
+    //     // $data = array("body"=>$message);
 
-        // Mail::send('mail', $data, function($message) use ($to_email, $title) {
-        //     $message->to($to_email)->subject($title);
-        // });
+    //     // Mail::send('mail', $data, function($message) use ($to_email, $title) {
+    //     //     $message->to($to_email)->subject($title);
+    //     // });
     
 
-        $to_email ="achouqfi@gmail.com";
+    //     $to_email ="achouqfi@gmail.com";
 
-        $title="Message safi surf club";
-        $message="vous avez un nouveau message sur safi surf club:". $msg;
-        // $cc="";
-        $data = array("body"=>$message);
+    //     $title="Message safi surf club";
+    //     $message="vous avez un nouveau message sur safi surf club:". $msg;
+    //     // $cc="";
+    //     $data = array("body"=>$message);
 
-        Mail::send('mail', $data, function($message) use ($to_email, $title) {
-            $message->to($to_email)->subject($title);
-        });
-        $msg->save();
+    //     Mail::send('mail', $data, function($message) use ($to_email, $title) {
+    //         $message->to($to_email)->subject($title);
+    //     });
+    //     $msg->save();
     
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 
 
     public function show($id)

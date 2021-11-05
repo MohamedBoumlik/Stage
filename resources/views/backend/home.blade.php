@@ -78,6 +78,7 @@
                                     <th>Nom de client</th>
                                     <th>Email de client</th>
                                     <th>tel de client</th>
+                                    <th>Produits</th>
                                     <th>Quantite</th>
                                     <th>Actions</th>
                                 </tr>
@@ -87,14 +88,15 @@
                                 @foreach ($cmd as $item)
                                         
                                         <tr>
-                                        <td>{{$item->client_name}}</td>
-                                        <td>{{$item->client_email}}</td>
-                                        <td>{{$item->client_tel}}</td>
-                                        <td>{{$item->produit}}</td>
-                                        <td>{{$item->quantite}}</td>
-                                        <td>
-                                                <form action="{{url('/admin/commandes/delete/'.$item->id)}}" method="POST"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
-                                        </td>
+                                            <td  style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->client_name}}</td>
+                                            <td>{{$item->client_email}}</td>
+                                            <td>{{$item->client_tel}}</td>
+                                            <td  style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->produit->name}}</td>
+                                            <td>{{$item->quantite}}</td>
+                                            <td>
+                                                <p><a href="{{url('/admin/commandes/show/'.$item->id)}}" title="Suite"><i class="fas fa-ellipsis-h"></i></a></p>
+                                                <form action="{{url('/admin/commandes/delete/'.$item->id)}}" method="POST" title="Supprimer"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
+                                            </td>
                                         </tr>
         
                                 @endforeach

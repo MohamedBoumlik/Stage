@@ -5,7 +5,7 @@
                     class="fas fa-tachometer-alt me-2"></i>Home</a>
             <a href="/admin/commandes" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
                     class="fas fa-shopping-cart me-2"></i>Commandes</a>
-            <a href="/admin/produit" class="list-group-item list-group-item-action bg-transparent second-text fw-bold actives"><i
+            <a href="/admin/produit" class="list-group-item list-group-item-action bg-transparent second-text fw-bold "><i
                     class="fas fa-fire-extinguisher me-2"></i>Produits</a>
             <a href="/admin/contact" class="list-group-item list-group-item-action bg-transparent second-text fw-bold actives"><i
                     class="fas fa-comment-dots me-2"></i>Messages</a>
@@ -46,15 +46,16 @@
 
                         @foreach ($msg as $item)
                                 
-                                <tr>
-                                <td>{{$item->name}}</td>
+                            <tr>
+                                <td  style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->name}}</td>
                                 <td>{{$item->email}}</td>
-                                <td>{{$item->sujet}}</td>
-                                <td>{{$item->message}}</td>
+                                <td style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->sujet}}</td>
+                                <td style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->message}}</td>
                                 <td>
-                                        <form action="{{url('/admin/contact/delete/'.$item->id)}}" method="POST"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
+                                    <p><a href="{{url('/admin/contact/show/'.$item->id)}}" title="Suite"><i class="fas fa-ellipsis-h"></i></a></p>
+                                    <form action="{{url('/admin/contact/delete/'.$item->id)}}" method="POST" title="Supprimer"> @csrf @method('DELETE') <button class="btn bnt-outline-danger" data-toggle="modal"><i class="material-icons" style="color: red" title="Delete">&#xE872;</i></button> </form>
                                 </td>
-                                </tr>
+                            </tr>
 
                         @endforeach
 

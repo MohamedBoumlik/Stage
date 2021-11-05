@@ -18,10 +18,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function homeAdmin()
     {
@@ -146,6 +146,13 @@ class Controller extends BaseController
     public function createServ()
     {
         return view('backend.services.create');
+    }
+
+    public function showServ($id)
+    {
+        $serv = Services::findOrFail($id);
+        return view('backend.services.show', compact('serv'));
+
     }
 
     public function storeServ(Request $request)
