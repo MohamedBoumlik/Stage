@@ -44,19 +44,41 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-            <li><a class="nav-link scrollto" href="{{url('/')}}">Accueil</a></li>
-            <li><a class="nav-link scrollto" href="{{url('/')}}">À propos de nous</a></li>
-            <li><a class="nav-link scrollto" href="{{url('/')}}">Services</a></li>
-            <li><a class="nav-link scrollto" href="{{url('/')}}">Produits</a></li>
-            <li><a class="nav-link scrollto" href="{{url('/')}}">Portfolio</a></li>
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-            <li><a href="#"><i class="bi bi-cart" style="font-size: 25px"></i></a></li>
-            {{-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> --}}
+                <li><a class="nav-link scrollto" href="{{url('/')}}">Accueil</a></li>
+                <li><a class="nav-link scrollto" href="{{url('/')}}">À propos de nous</a></li>
+                <li><a class="nav-link scrollto active" href="{{url('/')}}">Services</a></li>
+                <li><a class="nav-link scrollto" href="{{url('/')}}">Produits</a></li>
+                {{-- <li><a class="nav-link scrollto" href="{{url('/')}}">Portfolio</a></li> --}}
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a href="{{url('/panier')}}" class="nav-link scrollto  mb-1"><i class="bi bi-cart" style="font-size: 25px"></i></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
         </div>
     </header><!-- End Header -->
+
+    <section>
+
+        <div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">						
+                        <h4 class="modal-title text-center m-auto">{{$serv->titre}}</h4>
+                    </div>
+                    
+                    <div class="modal-body text-center">
+                        <img src="{{ asset($serv->pic) }}" height="200px" width="300px" style="border-radius: 7px" >					
+                    </div><br>  
+    
+                    <div class="modal-body text-center">
+                        <h2 class="d-flex">Description :</h2>
+                        <div style="word-wrap: break-word; padding: 20px">{{$serv->description}}</div>
+                    </div>  
+    
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>

@@ -30,7 +30,7 @@ Route::get('/panier','App\Http\Controllers\HomeController@panier');
 
 Route::get('/',"App\Http\Controllers\HomeController@index");
 // Route::Post('/produit/store',"App\Http\Controllers\HomeController@store");
-Route::get('/produit/show/{id}',"App\Http\Controllers\HomeController@show");
+Route::get('/produit/show/{id}',"App\Http\Controllers\HomeController@showProd");
 Route::put('/produit/update/{id}',"App\Http\Controllers\ProduitsController@update");
 Route::delete('/produit/delete/{id}',"App\Http\Controllers\ProduitsController@destroy");
 
@@ -57,7 +57,7 @@ Route::delete('/contact/delete/{id}',"App\Http\Controllers\ContactController@des
 // Route::Post('/services/store',"App\Http\Controllers\ServicesController@store");
 // Route::put('/services/update/{id}',"App\Http\Controllers\ServicesController@update");
 // Route::delete('/services/delete/{id}',"App\Http\Controllers\ServicesController@destroy");
-Route::get('/services/show/{id}',"App\Http\Controllers\HomeController@show");
+Route::get('/services/show/{id}',"App\Http\Controllers\HomeController@showServ");
 
 
 

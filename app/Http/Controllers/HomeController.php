@@ -38,6 +38,14 @@ class HomeController extends Controller
         // return view('home');
     }
 
+    
+    public function showServ($id)
+    {
+        $serv = Services::findOrFail($id);
+        return view('servShow', compact('serv'));
+
+    }
+
 
     // public function store(Request $request)
     // {
@@ -81,6 +89,13 @@ class HomeController extends Controller
         return view('servShow', compact('serv')); 
     }
 
+    public function showProd($id)
+    {
+        $prod = Produits::findOrFail($id);
+        return view('prodShow', compact('prod'));
+
+    }
+
     public function add(Request $request){
         $produit= Produits::find($request->id) ;
         Cart::add(array(
@@ -97,8 +112,8 @@ class HomeController extends Controller
 
     public function panier(){
         $content = Cart::getContent();
-        dd($content);
+        // dd($content);
 
-        // return view('panier',["content"=>$content]);
+        return view('panier',["content"=>$content]);
     }
 }
