@@ -49,7 +49,7 @@
                 <li><a class="nav-link scrollto active" href="{{url('/')}}">Services</a></li>
                 <li><a class="nav-link scrollto" href="{{url('/')}}">Produits</a></li>
                 {{-- <li><a class="nav-link scrollto" href="{{url('/')}}">Portfolio</a></li> --}}
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="/">Contact</a></li>
                 <li><a href="{{url('/panier')}}" class="nav-link scrollto  mb-1"><i class="bi bi-cart" style="font-size: 25px"></i></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

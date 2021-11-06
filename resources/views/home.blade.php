@@ -54,7 +54,7 @@
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Produits</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a href="{{url('/panier')}}" class="mb-1"><i class="bi bi-cart" style="font-size: 25px"></i></a></li>
+          <li><a href="{{url('/panier')}}" class="mb-1"><i class="bi bi-cart" style="font-size: 25px"></i> <span style="background-color: #ff901c; color: white; width: 20px; border-radius: 60px; height: 20px; line-height:1; display: flex; font-size: 12px; position: absolute; align-items: center; right: -10px ; justify-content: center; top: 0;">{{$countCmd}}</span> </a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

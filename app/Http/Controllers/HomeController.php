@@ -33,8 +33,10 @@ class HomeController extends Controller
         $prod = Produits::all();
         $serv = Services::all();
         $cat = Categories::all();
+        $content = Cart::getContent();
+        $countCmd = count($content);
         // $categ = Categories::all();
-        return view('home',compact('prod', 'serv','cat'));
+        return view('home',compact('prod', 'serv','cat','countCmd'));
         // return view('home');
     }
 
@@ -96,7 +98,7 @@ class HomeController extends Controller
 
     }
 
-    public function add(Request $request){
+    public function add(Request $request ,$id){
         $produit= Produits::find($request->id) ;
         Cart::add(array(
             'id' => $produit->id, // inique row ID
@@ -106,14 +108,14 @@ class HomeController extends Controller
             'photo' => array($produit->path) ,
             'attributes' => array()
         ));
-        return redirect('/panier');
+        return redirect('/');
 
     }
 
     public function panier(){
         $content = Cart::getContent();
-        // dd($content);
-
-        return view('panier',["content"=>$content]);
+        $countCmd = count($content);
+        return view('panier',compact('content','countCmd'));
     }
+
 }

@@ -9,12 +9,6 @@ use Illuminate\Http\Request;
 
 class CommandesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-   
 
     /**
      * Show the form for creating a new resource.
@@ -34,20 +28,27 @@ class CommandesController extends Controller
      */
     public function store(Request $request)
     {
-        $cmd = new Commandes;
-        $cmd ->client_name = $request->client_name;
-        $cmd->client_email = $request->client_email;
-        $cmd->client_tel = $request->client_tel;
-        $cmd->quantite = $request->quantite;
-        $cmd->save();
-        return view('');
+        // foreach($$request-> as $request){
+
+        //     $cmd = new Commandes;
+        //     $cmd ->client_name = $request->client_name;
+        //     $cmd->client_email = $request->client_email;
+        //     $cmd->client_tel = $request->client_tel;
+        //     $cmd->produit_id = $request->produit_id;
+        //     $cmd->quantite = $request->quantity;
+        //     $cmd->etat = $request->etat;
+        //     $cmd->save();
+        //     // $data= [
+        //     //     [$cmd->client_email = $request->client_email],
+        //     //     [$cmd ->client_name = $request->client_name],
+        //     //     [$cmd->client_tel = $request->client_tel],
+        //     //     [$cmd->produit_id = $request->produit_id],
+        //     //     [$cmd->quantite = $request->quantity],
+        //     //     [$cmd->etat = $request->etat]
+        //     // ];
+        //     // Commandes::save($data);
+        // }
+        // return redirect('/');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Commandes  $commandes
-     * @return \Illuminate\Http\Response
-     */
-   
 }

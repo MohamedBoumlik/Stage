@@ -49,7 +49,7 @@
                 <li><a class="nav-link scrollto" href="{{url('/')}}">Services</a></li>
                 <li><a class="nav-link scrollto" href="{{url('/')}}">Produits</a></li>
                 {{-- <li><a class="nav-link scrollto" href="{{url('/')}}">Portfolio</a></li> --}}
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="/">Contact</a></li>
                 <li><a href="{{url('/panier')}}" class="nav-link scrollto active mb-1"><i class="bi bi-cart" style="font-size: 25px"></i></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -62,7 +62,7 @@
 
         <div class="container">
             <div class="row mt-5">
-                {{-- <form action="{{url('/panier/add/'.$content->id)}}" method="POST"> --}}
+                <form action="{{url('/panier/confirmation')}}" method="POST">
                     @csrf
 
                     <table class="table table-striped table-hover">
@@ -81,10 +81,17 @@
 
                                 <tr>
                                     <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->id}}</td>
+                                    <input type="hidden" name="produit_id" value="{{$item->id}}">
+
                                     <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->photo}}</td>
+                                    
                                     <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->name}}</td>
+                                    {{-- <input type="hidden" name="" value="{{$item->name}}"> --}}
+
                                     <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->price}}</td>
-                                    <td style="padding: 30px ; vertical-align: middle; text-align: center;"><input type="number" style="max-width: 60px;" value="{{$item->quantity}}"></td>
+
+                                    <td style="padding: 30px ; vertical-align: middle; text-align: center;"><input type="number" style="max-width: 60px;" name="quantity" value="{{$item->quantity}}"></td>
+                                    
                                     <td style="padding: 30px ; vertical-align: middle; text-align: center;">
                                         <button class="btn btn-outline-danger">Supprimer</button>
                                     </td>
@@ -94,8 +101,30 @@
                         
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-end mt-3"><button class="btn btn-outline-success">Confimer</button></div>
-                {{-- </form> --}}
+
+                    <div class="row gy-4 mt-5 p-4" style="background-color: whitesmoke">
+
+                        <h2 class="text-center" style="color: #f88c09; font-weight: bolder">Informations personnels</h2>
+
+                        <div class="col-md-6 ">
+                          <input type="email" class="form-control" name="client_email[]" placeholder="Entrez vous email" required>
+                        </div>
+
+                        <div class="col-md-6">
+                          <input type="text" name="client_name[]" class="form-control" placeholder="Entrez vous nom" required>
+                        </div>
+        
+        
+                        <div class="col-md-12">
+                          <input type="tel" class="form-control" name="client_tel[]" placeholder="Vos num de telephone" required>
+                        </div>
+                        <input type="hidden" value="sent" name="etat[]">
+        
+                    </div>
+                    <div class="text-center"><button class="btn btn-outline-success">Confimer</button></div>
+
+
+                </form>
             </div>
         </div>
 

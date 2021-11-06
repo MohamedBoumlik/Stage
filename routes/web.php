@@ -25,6 +25,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::post('/panier/add/{id}','App\Http\Controllers\HomeController@add');
 Route::get('/panier','App\Http\Controllers\HomeController@panier');
+Route::post('/panier/confirmation','App\Http\Controllers\CommandesController@store');
 
 // ---------------------------Produits:---------------------------
 
