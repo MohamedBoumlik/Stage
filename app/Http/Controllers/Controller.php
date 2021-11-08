@@ -223,6 +223,6 @@ class Controller extends BaseController
     {
         $cmd = Commandes::findOrFail($id);
         Commandes::destroy($id);
-        return redirect()->back()->with("dltCmd","Service supprimé");
+        return redirect()->back()->with("dltCmd","Commande supprimé");
     }
 }

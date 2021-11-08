@@ -91,7 +91,7 @@
                                             <td  style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->client_name}}</td>
                                             <td>{{$item->client_email}}</td>
                                             <td>{{$item->client_tel}}</td>
-                                            <td  style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->produit->name}}</td>
+                                            <td  style="max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{$item->produit()->name}}</td>
                                             <td>{{$item->quantite}}</td>
                                             <td>
                                                 <p><a href="{{url('/admin/commandes/show/'.$item->id)}}" title="Suite"><i class="fas fa-ellipsis-h"></i></a></p>

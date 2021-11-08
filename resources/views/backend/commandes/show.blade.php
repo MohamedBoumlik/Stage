@@ -42,7 +42,7 @@
 
                 <div class="modal-body text-center">
                     <h3 class="d-flex">Produits :</h3><br>
-                    <div style="word-wrap: break-word; padding: 20px">{{$cmd->produit->name}}</div>
+                    <div style="word-wrap: break-word; padding: 20px">{{$cmd->produit()->name}}</div>
                 </div> 
 
                 <div class="modal-body text-center">

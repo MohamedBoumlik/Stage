@@ -9,9 +9,9 @@ class Commandes extends Model
 {
     use HasFactory;
 
-    public function CmdProduits () {
+    public function produit () {
 
-        return $this-> hasMany ("App\Models\Produits")->get();
+        return $this-> belongsTo ("App\Models\Produits")->first();
     
     }
 

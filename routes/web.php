@@ -26,6 +26,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::post('/panier/add/{id}','App\Http\Controllers\HomeController@add');
 Route::get('/panier','App\Http\Controllers\HomeController@panier');
 Route::post('/panier/confirmation','App\Http\Controllers\CommandesController@store');
+Route::get('/commandes/delete/{id}',"App\Http\Controllers\CommandesController@destroy");
 
 // ---------------------------Produits:---------------------------
 
@@ -49,7 +50,7 @@ Route::delete('/contact/delete/{id}',"App\Http\Controllers\ContactController@des
 
 // Route::get('/commandes',"App\Http\Controllers\CommandesController@index");
 // Route::Post('/commandes/store',"App\Http\Controllers\CommandesController@store");
-// Route::delete('/commandes/delete/{id}',"App\Http\Controllers\CommandesController@destroy");
+Route::delete('/commandes/delete/{id}',"App\Http\Controllers\CommandesController@destroy");
 
 
 // // ---------------------------Services:---------------------------
@@ -96,7 +97,7 @@ Route::delete('/admin/services/delete/{id}',"App\Http\Controllers\Controller@des
 // ---------------------------Commandes:---------------------------
 
 Route::get('/admin/commandes',"App\Http\Controllers\Controller@indexCmd")->middleware('auth');
-Route::get('/admin/commandes/show',"App\Http\Controllers\Controller@showCmd")->middleware('auth');
+Route::get('/admin/commandes/show/{id}',"App\Http\Controllers\Controller@showCmd")->middleware('auth');
 Route::Post('/admin/commandes/store',"App\Http\Controllers\Controller@storeCmd")->middleware('auth');
 Route::delete('/admin/commandes/delete/{id}',"App\Http\Controllers\Controller@destroyCmd")->middleware('auth');
 
