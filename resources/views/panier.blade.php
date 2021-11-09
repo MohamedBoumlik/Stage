@@ -68,42 +68,40 @@
             <div class="row mt-5">
                 <form action="{{url('/panier/confirmation')}}" method="POST">
                     @csrf
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr >
-                                <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Id</th>
-                                <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Photo de produit</th>
-                                <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Nom de produit</th>
-                                <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Prix(DH)</th>
-                                <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Quantité</th>
-                                <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($content as $item)
-
-                                <tr>
-                                    <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->id}}</td>
-                                    <input type="hidden" name="produit_id[]" value="{{$item->id}}">
-
-                                    <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->photo}}</td>
-                                    
-                                    <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->name}}</td>
-                                    {{-- <input type="hidden" name="" value="{{$item->name}}"> --}}
-
-                                    <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->price}}</td>
-
-                                    <td style="padding: 30px ; vertical-align: middle; text-align: center;"><input type="number" style="max-width: 60px;" name="quantite[]" value="{{$item->quantity}}"></td>
-                                    
-                                    <td style="padding: 30px ; vertical-align: middle; text-align: center;">
-                                        <a href="{{url('/commandes/delete/'.$item->id)}}">@csrf<button class="btn btn-outline-danger" type="button">Supprimer</button></a>
-                                    </td>
+                    <div class="col-lg-12 md-6">
+                        <table class="table table-striped table-hover mr-5">
+                            <thead>
+                                <tr >
+                                    <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Nom de produit</th>
+                                    <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Prix(DH)</th>
+                                    <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Quantité</th>
+                                    <th scope="col" style="padding: 30px; text-align: center; vertical-align: middle;">Action</th>
                                 </tr>
-                                
-                            @endforeach
-                        
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($content as $item)
+    
+                                    <tr>
+                                        <input type="hidden" name="produit_id[]" value="{{$item->id}}">
+                                            
+                                        <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->name}}</td>
+                                        {{-- <input type="hidden" name="" value="{{$item->name}}"> --}}
+    
+                                        <td style="padding: 30px ; vertical-align: middle; text-align: center;">{{$item->price}}</td>
+    
+                                        <td style="padding: 30px ; vertical-align: middle; text-align: center;"><input type="number" style="max-width: 60px;" name="quantite[]" value="{{$item->quantity}}"></td>
+                                        
+                                        <td style="padding: 30px ; vertical-align: middle; text-align: center;">
+                                            <a href="{{url('/commandes/delete/'.$item->id)}}">@csrf<i class="bi bi-trash" style="font-size: 26px; color: red;"></i></a>
+                                        </td>
+                                    </tr>
+                                    
+                                @endforeach
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                    
 
                     <div class="row gy-4 mt-5 p-4" style="background-color: whitesmoke">
 

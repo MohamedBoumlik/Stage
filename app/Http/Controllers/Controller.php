@@ -18,14 +18,9 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
     public function homeAdmin()
     {
-        $cmd = Commandes::all();
+        $cmd = Commandes::paginate(4);
         $Contact = Contact::all();
         $Produits = Produits::all();
         $serv = Services::all();
@@ -41,15 +36,9 @@ class Controller extends BaseController
     public function index()
     {
         $types = Categories::all();
-        $prod = Produits::all();
+        $prod = Produits::paginate(4);
         return view('backend.produits.index',compact('prod','types'));
     }
-
-    // public function create()
-    // {
-    //     $type = Categories::all();
-    //     return view('backend.produits.index', compact('type'));
-    // }
 
     public function store(Request $request)
     {
@@ -118,7 +107,7 @@ class Controller extends BaseController
 
     public function indexContact()
     {
-        $msg = Contact::all();
+        $msg = Contact::paginate(4);
         return view('backend.contact.index',compact('msg'));
     }
 
@@ -139,7 +128,7 @@ class Controller extends BaseController
 
     public function indexServ()
     {
-        $serv = Services::all();
+        $serv = Services::paginate(4);
         return view('backend.services.index', compact('serv'));
     }
 
@@ -204,11 +193,11 @@ class Controller extends BaseController
 
     }
 
-    // ---------------------------------------------- commandes ---------------------------------------------- 
+    // ---------------------------------------------- Commandes ---------------------------------------------- 
 
     public function indexCmd()
     {
-        $cmd = Commandes::all();
+        $cmd = Commandes::paginate(4);
         return view('backend.commandes.index', compact('cmd'));
     }
 

@@ -296,7 +296,7 @@
   * Mobile Navigation 
   */
   .mobile-nav-toggle {
-    color: #012970;
+    color: #f88c09;
     font-size: 28px;
     cursor: pointer;
     display: none;
@@ -323,7 +323,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(1, 22, 61, 0.9);
+    background: #fdcda6f6;
     transition: 0.3s;
   }
   .navbar-mobile .mobile-nav-toggle {
@@ -2037,11 +2037,11 @@
   .footer .copyright {
     text-align: center;
     padding-top: 30px;
-    color: #012970;
+    color: #f88c09;
   }
   .footer .credits {
     padding-top: 10px;
     text-align: center;
     font-size: 13px;
-    color: #012970;
+    color: #f88c09;
   }

@@ -73,6 +73,9 @@
                 </table>
 
             </div>
+            <div class="d-flex justify-content-center">
+                <span class="mt-4">{{$serv->links("pagination::bootstrap-4")}}</span>
+            </div>
         </div>        
     </div>
     <!-- Add Modal HTML -->

@@ -34,6 +34,12 @@
                               <label>Nom</label>
                               <input type="text" class="form-control" name='name' placeholder="Entrez le nom" value="{{$prod->name}}" required >
                           </div>
+
+                          <div class="form-group">
+                              <label>Prix</label>
+                              <input type="number" class="form-control" name='prix' placeholder="Entrez le prix" value="{{$prod->prix}}" required >
+                          </div>
+
                           <div class="form-group">
                               <label>La Photo De Produit</label>
                               <div class="d-flex">

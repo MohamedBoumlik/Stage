@@ -105,6 +105,10 @@
                         </table>
         
                     </div>
+
+                    <div class="d-flex justify-content-center">
+                        <span class="mt-4">{{$cmd->links("pagination::bootstrap-4")}}</span>
+                    </div>
                 </div>        
             </div>
     </div>

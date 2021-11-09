@@ -66,87 +66,11 @@
                 </table>
 
             </div>
+            <div class="d-flex justify-content-center">
+                <span class="mt-4">{{$cmd->links("pagination::bootstrap-4")}}</span>
+            </div>
         </div>        
     </div>
-    {{-- <!-- Add Modal HTML -->
-    <div id="addEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="{{url('/admin/produit/store')}}" method="POST" enctype= multipart/form-data>
-                  @csrf
-
-                    <div class="modal-header">						
-                        <h4 class="modal-title">Ajouté un produit</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-
-                    <div class="modal-body">					
-                        <div class="form-group">
-                            <label>Nom</label>
-                            <input type="text" class="form-control" name='name' placeholder="Entrez le nom" required >
-                        </div>
-                        <div class="form-group">
-                            <label>La Photo De Produit</label>
-                            <input type="file" class="form-control" name='pic' placeholder="Sélectionnez une image" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name='description' placeholder="Entrez la decsription" required></textarea>
-                        </div>
-                        <div class="form-group">
-                                <select class="form-select"  name="categorie_id" required>
-                                        <option selected>Sélectionnez un type</option>
-                                        @foreach ($types as $type)
-                                                <option value='{{$type->id}}'>{{$type->type}}</option>
-                                        @endforeach
-                                </select>
-                        </div>					
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-outline-danger" data-dismiss="modal" value="Annuler">
-                        <input type="submit" class="btn btn-outline-dark" value="Ajouter">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
-
-
-{{--     
-    <!-- Edit Modal HTML -->
-    <div id="editEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">						
-                        <h4 class="modal-title">Edit Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">					
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" required>
-                        </div>					
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
+ 
   
 @endsection

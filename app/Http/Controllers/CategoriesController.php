@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     {
         // $cat = Categories::all();
         // return response()->json($cat);
-        $cat = Categories::all();
+        $cat = Categories::paginate(4);
         return view('backend.categories.index', compact('cat'));
 
     }

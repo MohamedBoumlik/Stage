@@ -30,8 +30,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $prod = Produits::all();
-        $serv = Services::all();
+        $prod = Produits::paginate(4);
+        $serv = Services::paginate(3);
         $cat = Categories::all();
         $content = Cart::getContent();
         $countCmd = count($content);
